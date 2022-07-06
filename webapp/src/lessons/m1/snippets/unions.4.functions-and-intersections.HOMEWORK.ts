@@ -47,6 +47,10 @@ type ProcessEmployeeFunctionIntersection =
   & typeof processWebDeveloper
   & typeof processTaxiDriver
 declare let processEmployeeI: ProcessEmployeeFunctionIntersection
+
+const process: ProcessEmployeeFunctionIntersection = (param) => {
+
+}
 // przecięcie funkcji działa jak function overload
 // czy przekażemy developera, czy taxi driver - jest git
 processEmployeeI(webDeveloper)
