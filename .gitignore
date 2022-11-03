@@ -123,3 +123,5 @@ dist
 # Ignorujemy lockfile na najwyższym poziomie - tam package.json nie ma zależności
 /package-lock.json
 /yarn.lock
+
+.history
