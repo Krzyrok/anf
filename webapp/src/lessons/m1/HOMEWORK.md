@@ -6,6 +6,7 @@
 - prześledź przykłady kodu; sprawdź, czy rozumiesz dlaczego kompilator kod przepuszcza albo nie
 - w szczególności, przeanalizuj `union-to-intersection.HOMEWORK.ts`
 
+## X to omijam:
 ## Testy unitowe + typy
 
 - folder: `src/lessons/m1/homework-tests`
@@ -13,6 +14,7 @@
 - inicjalnie testy są zaskipowane - należy je "odskipować". Brakuje im implementacji, więc wszystkie inicjalnie failują. 
 - zadanie: Należy napisać implementację, zgodnie z poleceniami w każdym pliku - a przy okazji poćwiczyć typowanie w TypeScripcie.
 
+## to mogę na koniec
 ## Mmodelowanie Domeny - System Ankiet (Ćwiczenie Designowe)
 
 Zadanie:
