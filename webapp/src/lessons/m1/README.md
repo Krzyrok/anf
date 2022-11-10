@@ -39,9 +39,9 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
   - `cfa.ts`
   - `cfa-dead-branch.ts`
   - `cfa.dla.powaznych.ts`
-- TODO: Generyki i typy złożone https://edu.devstyle.pl/products/anf-architektura-na-froncie/categories/2148155942/posts/2149900719
-  - v `types-generics.ts`
-  - v `types-mapped.ts`
+- v Generyki i typy złożone
+  - `types-generics.ts`
+  - `types-mapped.ts`
   - `types-conditional.ts`
   - `types-conditional-mapped.ts`
   - `union-to-intersection.HOMEWORK.ts`
