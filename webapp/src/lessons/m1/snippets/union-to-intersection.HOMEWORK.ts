@@ -16,6 +16,7 @@ u = { data: true } // ✅
 u = { data: 125 } // ✅
 
 type DataIntersection = UnionToIntersection<DataUnion>
+type DataIntersection2 = UnionToIntersection<number | string> // number & string
 
 let i: DataIntersection
 i = { data: 'yo' } // ✅
@@ -57,5 +58,5 @@ type ParamWithoutDistribution<T> = [T] extends [(arg: infer U) => void] ? U : ne
 type InferredParamsWithoutDistribution = ParamWithoutDistribution<((a: string | number) => void) | ((a: number) => void)>; // (string | number) & number
 
 // example: enabled distribution:
-type ParamWithtDistribution<T> = T extends (arg: infer U) => void ? U : never;
-type InferredParamsWithDistribution = ParamWithtDistribution<((a: string | number) => void) | ((a: number) => void)>; // (string | number) | number
+type ParamWithDistribution<T> = T extends (arg: infer U) => void ? U : never;
+type InferredParamsWithDistribution = ParamWithDistribution<((a: string | number) => void) | ((a: number) => void)>; // (string | number) | number
