@@ -9,13 +9,17 @@ type WithoutNullProperties<T> = Pick<T, {
   [P in keyof T]: null extends T[P] ? never : P
 }[keyof T]>
 
+// type WithoutNullProperties<T> = Pick<T, {
+//   [P in keyof T]: null extends T[P] ? never : (undefined extends T[P] ? never : P)
+// }[keyof T]>
+
 type Order = {
   price: number;
   deliveryDate: Date | undefined;
   shipment: string | null;
 };
 
-type OrderWithoutNullProperties = WithoutNullProperties<Order>
+type OrderWithoutNullAndUndefinedProperties = WithoutNullProperties<Order>
 
 
 /// analiza
