@@ -63,8 +63,8 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
   - `soundness.1.ts`
   - `soundness.2.ts`
 - Wzorce i antywzorce
-  - `patterns.single-source-of-truth.ts`
-  - `patterns.opaque-brand.ts`
+  - v`patterns.single-source-of-truth.ts`
+  - v`patterns.opaque-brand.ts`
   - `patterns.value-objects.ts`
   - `patterns.anti.boolean-obsession.ts`
   - `patterns.http.ts`
