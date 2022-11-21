@@ -24,6 +24,17 @@ type Info = {
 // - OUTPUT: unia string|nummber (kowariancja) - standardowo, intuicyjnie
 // - INPUT: never (kontrawariancja) - bo value string & number -> never
 const calculate = ({ value, format }: Info) => format(value)
+
+// K: do not work narrowing in this case
+const calculate1 = (arg: Info) => {
+  arg.value;
+  arg.format
+  if (typeof arg.value === 'number') {
+    arg.value;
+    arg.format;
+  }
+}
+
 // unia na pozycji COvariant = unia
 // unia na pozycji CONTRAvariant = przecięcie (odwrócenie)
 
@@ -48,3 +59,31 @@ f2() // f2: (value: never) => string
 // co można zrobić, żeby to przeszło?
 // najprościej - z INFO zrobić dyskryminacyjną unię (obecnie nie jest dyskryminacyjna) - dodać np. `type`
 // i potem w środku type guard. To będzie kod dłuższy, ale prosty jak budowa cepa
+
+// K: discriminative union
+type Info2 = {
+  label: number
+  value: number
+  format: (value: number) => number
+  type: 'numberToNumber'
+} | {
+  label: string
+  value: number
+  format: (value: number) => string
+  type: 'numberToString'
+} | {
+  label: string
+  value: string
+  format: (value: string) => string
+  type: 'stringToString'
+}
+
+const calculate2 = ({ value, format, type }: Info2) => {
+  if (type === 'numberToNumber') {
+    return format(value);
+  } else if (type === 'numberToString') {
+    return format(value);
+  } else {
+    return format(value);
+  }
+}
