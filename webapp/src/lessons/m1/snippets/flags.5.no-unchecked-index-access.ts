@@ -47,7 +47,8 @@ function randomItemOnceFrom<T>(collection: ReadonlyArray<T>){
     // jak możemy uchronić się przed błędem związanym z undefined?
     // 1. manualne akrobacje (czyt. type assertion) 🙃
     const element = spliceChunk[0] as T | undefined
+    // return element;
     // 2. noUncheckedIndexedAccess + linijka poniżej
-    // return spliceChunk[0]
+    return spliceChunk[0]
   }
 }

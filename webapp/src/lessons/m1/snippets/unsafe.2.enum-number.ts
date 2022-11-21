@@ -6,3 +6,8 @@ enum PageSize {
 }
 
 const defaultSize: PageSize = 7234 // 😞
+
+function setPageSize(size: PageSize) {
+}
+
+setPageSize(555);
