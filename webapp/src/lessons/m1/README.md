@@ -11,17 +11,17 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
 
 ## Pliki wg lekcji
 
-- Podstawy Type safety
+- v Podstawy Type safety
   - `intro-playground.tsx`
   - `intro.breaking-changes-3-5.ts`
-- System typów TypeScripta
+- v System typów TypeScripta
   - `struct.0.structural-vs-nominal.ts`
   - `struct.1.structural-polymorphism.ts`
   - `struct.2.polymorphism-toyaml.ts `
   - `annotation-vs-assertion.ts`
-- Wnioskowanie typów
+- v Wnioskowanie typów
   - `inference.ts`
-- Typy to zbiory
+- v Typy to zbiory
   - `types-are-sets.1.primitives.ts`
   - `types-are-sets.2.objects.ts`
   - `unions.1.ts`
@@ -35,7 +35,7 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
   - `compatibility.4.weak-types.ts`
   - `types-vs-interfaces.1.ts`
   - `types-vs-interfaces.2.performance.ts`
-- Control Flow Analysis
+- v Control Flow Analysis
   - `cfa.ts`
   - `cfa-dead-branch.ts`
   - `cfa.dla.powaznych.ts`
@@ -45,7 +45,7 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
   - `types-conditional.ts`
   - `types-conditional-mapped.ts`
   - `union-to-intersection.HOMEWORK.ts`
-- Type-unsafe
+- v Type-unsafe
   - `unsafe.0.array-access.ts`
   - `unsafe.1.index-signature.ts`
   - `unsafe.2.enum-number.ts`
@@ -62,9 +62,9 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
   - `invariance.HOMEWORK.ts`
   - `soundness.1.ts`
   - `soundness.2.ts`
-- Wzorce i antywzorce
-  - v`patterns.single-source-of-truth.ts`
-  - v`patterns.opaque-brand.ts`
+- v Wzorce i antywzorce
+  - `patterns.single-source-of-truth.ts`
+  - `patterns.opaque-brand.ts`
   - `patterns.value-objects.ts`
   - `patterns.anti.boolean-obsession.ts`
   - `patterns.http.ts`
