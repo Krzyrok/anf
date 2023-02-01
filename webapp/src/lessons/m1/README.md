@@ -69,6 +69,11 @@ W tym module uczymy się o bezpieczeństwie typów i o kompilatorze TypeScripta.
   - `patterns.anti.boolean-obsession.ts`
   - `patterns.http.ts`
 
+ZDECYDOWAĆ:
+
+- czy lessons/m1/homework-tests
+- czy lecimy dalej
+
 ## Zagadnienia TSowe w przyszłych modułach
 
 - M1: 🤓
