@@ -1,7 +1,7 @@
 export type SurveyQuestion =
   | SurveySingleAnswerQuestion
   | SurveyMultipleAnswerQuestion
-  | SurveyOpenAnswerQuestion;
+  | SurveyOpenEndedQuestion;
 
 interface Answer {
   text: string;
@@ -18,24 +18,31 @@ interface Answer {
 //   isSelected: boolean;
 // }
 
-interface BaseQuestion {
+export interface BaseQuestion {
   id: string;
   question: string;
+  type: SurveyQuestionType;
+}
+
+export enum SurveyQuestionType {
+  singleAnswer = "singleAnswer",
+  multipleAnswer = "multipleAnswer",
+  openEnded = "openEnded",
 }
 
 interface SurveySingleAnswerQuestion extends BaseQuestion {
-  type: "singleAnswer";
+  type: SurveyQuestionType.singleAnswer;
   possibleAnswers: Answer[]; // or SingleAnswer[]
   selectedAnswerId: string;
 }
 
 interface SurveyMultipleAnswerQuestion extends BaseQuestion {
-  type: "multipleAnswer";
+  type: SurveyQuestionType.multipleAnswer;
   possibleAnswers: Answer[]; // or MultipleAnswer
   selectedAnswerIds: string[];
 }
 
-interface SurveyOpenAnswerQuestion extends BaseQuestion {
-  type: "openAnswer";
+interface SurveyOpenEndedQuestion extends BaseQuestion {
+  type: SurveyQuestionType.openEnded;
   answer: Answer; // or string;
 }

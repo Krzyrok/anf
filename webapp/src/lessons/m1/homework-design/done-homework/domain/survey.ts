@@ -1,7 +1,6 @@
 import { AnsweredSurvey } from "./answeredSurvey";
 
-// or SurveysAggregate or smth like this;
-export interface TopicSurvey {
+export interface Survey {
   topic: string;
   answeredSurveys: AnsweredSurvey[];
 }

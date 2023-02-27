@@ -1,9 +1,9 @@
 import * as React from "react";
 import { AnsweredSurvey } from "../../../domain/answeredSurvey";
 
-// types shape depends:
+// types shape depends on:
 // - if we want to make calculation on FE to display the data
-//    (quick implementation; storing only data on BE about survey shape and the answers)
+//    (quick implementation; storing only data on BE about the survey shape and the answers)
 //    then we can use single type shape (domain) shared between SurveyAnswersSummaryTab and IndividualSurveysTab
 //    what is presented below. We get all the data on the start and display it without delay (only data
 //    processing must to be done on FE so performance depends on the data amount and user hardware)
