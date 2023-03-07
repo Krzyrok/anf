@@ -1,6 +1,6 @@
 import * as React from "react";
-import { AnsweredSurvey } from "../../../domain/answeredSurvey";
 import { SurveySummaryReport } from "../../../domain/surveySummaryReport";
+import { QuestionSummary } from "./QuestionSummary";
 
 // types shape depends on:
 // - if we want to make calculation on FE to display the data
@@ -22,6 +22,15 @@ type SurveyAnswersSummaryTabProps = Pick<
   "allRespondentsCount" | "questionsAnswersSummaries"
 >;
 
-// renders:
-// - TODO K: 1:
-export declare const SurveyAnswersSummaryTab: React.FC<SurveyAnswersSummaryTabProps>;
+export const SurveyAnswersSummaryTab: React.FC<SurveyAnswersSummaryTabProps> = (
+  props
+) => (
+  <>
+    {props.questionsAnswersSummaries.map((summary) => (
+      <QuestionSummary
+        {...summary}
+        respondentsNumber={props.allRespondentsCount}
+      />
+    ))}
+  </>
+);

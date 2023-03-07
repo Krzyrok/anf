@@ -1,8 +1,12 @@
 import * as React from "react";
 import { SurveySummaryReport } from "../../domain/surveySummaryReport";
+import { SurveyAnswersSummaryTab } from "./surveyAnswersSummary/SurveyAnswersSummaryTab";
 
-// renders:
-// - topic
-// - SurveyAnswersSummaryTab;
-// - IndividualSurveysTab
-export declare const SurveySummary: React.FC<SurveySummaryReport>;
+export const SurveySummary: React.FC<SurveySummaryReport> = (props) => (
+  <>
+    {props.topic}
+    <SurveyAnswersSummaryTab {...props} />
+    {/* TODO K: */}
+    {/* IndividualSurveysTab */}
+  </>
+);

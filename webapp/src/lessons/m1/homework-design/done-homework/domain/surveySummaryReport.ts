@@ -6,7 +6,7 @@ export interface SurveySummaryReport {
   allRespondentsCount: number;
 }
 
-type QuestionAnswersSummaryReport =
+export type QuestionAnswersSummaryReport =
   | SurveySingleAnswerQuestionAnswersSummaryReport
   | SurveyMultipleAnswerQuestionAnswersSummaryReport
   | SurveyOpenEndedQuestionAnswersSummaryReport;
@@ -16,12 +16,12 @@ interface QuestionAnswersSummaryBaseReport {
   type: SurveyQuestionType;
 }
 
-interface SingleAnswerQuestionAnswerSummaryReport {
+export interface SingleAnswerQuestionAnswerSummaryReport {
   text: string;
   selections: number;
 }
 
-interface SurveySingleAnswerQuestionAnswersSummaryReport
+export interface SurveySingleAnswerQuestionAnswersSummaryReport
   extends QuestionAnswersSummaryBaseReport {
   type: SurveyQuestionType.singleAnswer;
   answersSummary: SingleAnswerQuestionAnswerSummaryReport[];
@@ -30,7 +30,7 @@ interface SurveySingleAnswerQuestionAnswersSummaryReport
 type MultipleAnswerQuestionAnswerSummaryReport =
   SingleAnswerQuestionAnswerSummaryReport;
 
-interface SurveyMultipleAnswerQuestionAnswersSummaryReport
+export interface SurveyMultipleAnswerQuestionAnswersSummaryReport
   extends QuestionAnswersSummaryBaseReport {
   type: SurveyQuestionType.multipleAnswer;
   answersSummary: MultipleAnswerQuestionAnswerSummaryReport[];
@@ -38,9 +38,10 @@ interface SurveyMultipleAnswerQuestionAnswersSummaryReport
 
 interface OpenEndedQuestionAnswerSummaryReport {
   text: string;
+  submitDate: Date;
 }
 
-interface SurveyOpenEndedQuestionAnswersSummaryReport
+export interface SurveyOpenEndedQuestionAnswersSummaryReport
   extends QuestionAnswersSummaryBaseReport {
   type: SurveyQuestionType.openEnded;
   answersSummary: OpenEndedQuestionAnswerSummaryReport[];

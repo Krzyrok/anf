@@ -1,9 +1,15 @@
 import * as React from "react";
 import { SurveySummaryReport } from "../domain/surveySummaryReport";
+import { SurveySummary } from "./surveySummary/SurveySummary";
 
-// start here
+const shouldDisplaySummary = true;
 
-// renders:
-// - SurveySummary - to see summary of answered surveys (probably by survey author)
-// - SurveyToAnswer - survey which should be filled by respondent
-export declare const Application: React.FC<SurveySummaryReport>;
+export const Application: React.FC<SurveySummaryReport> = (props) => {
+  if (shouldDisplaySummary) {
+    return <SurveySummary {...props} />;
+  }
+
+  // TODO K:
+  // - SurveyToAnswer - survey which should be filled by respondent
+  return null;
+};
