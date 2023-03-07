@@ -1,11 +1,15 @@
 import * as React from "react";
-import { AnsweredSurvey } from "../../../domain/answeredSurvey";
+import { IndividualSurvey } from "./IndividualSurvey";
 
 interface IndividualSurveysTabProps {
-  answeredSurveys: AnsweredSurvey[];
+  answeredSurveyIds: string[];
 }
 
-// renders:
-// - switch between surveys
-// - ./IndividualSurvey
-export declare const IndividualSurveysTab: React.FC<IndividualSurveysTabProps>;
+export const IndividualSurveysTab: React.FC<IndividualSurveysTabProps> = (
+  props
+) => (
+  <>
+    {/* buttons to switch between surveys */}
+    <IndividualSurvey surveyId="1" />
+  </>
+);

@@ -3,6 +3,7 @@ import { SurveyQuestionType } from "./question";
 export interface SurveySummaryReport {
   topic: string;
   questionsAnswersSummaries: QuestionAnswersSummaryReport[];
+  answeredSurveysIds: string[];
   allRespondentsCount: number;
 }
 

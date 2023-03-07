@@ -1,12 +1,11 @@
 import * as React from "react";
-import { SurveySummaryReport } from "../domain/surveySummaryReport";
 import { SurveySummary } from "./surveySummary/SurveySummary";
 
 const shouldDisplaySummary = true;
 
-export const Application: React.FC<SurveySummaryReport> = (props) => {
+export const Application: React.FC = () => {
   if (shouldDisplaySummary) {
-    return <SurveySummary {...props} />;
+    return <SurveySummary surveyId="1" />;
   }
 
   // TODO K:
