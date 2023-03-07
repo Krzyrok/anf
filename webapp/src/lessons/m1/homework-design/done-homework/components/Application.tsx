@@ -1,5 +1,6 @@
 import * as React from "react";
 import { SurveySummary } from "./surveySummary/SurveySummary";
+import { SurveyToAnswer } from "./surveyToAnswer/SurveyToAnswer";
 
 const shouldDisplaySummary = true;
 
@@ -8,7 +9,5 @@ export const Application: React.FC = () => {
     return <SurveySummary surveyId="1" />;
   }
 
-  // TODO K:
-  // - SurveyToAnswer - survey which should be filled by respondent
-  return null;
+  return <SurveyToAnswer surveyId="1" isNew={true} />;
 };

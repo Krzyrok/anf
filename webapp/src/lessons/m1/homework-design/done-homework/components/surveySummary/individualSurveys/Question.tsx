@@ -1,12 +1,12 @@
 import {
-  SurveyMultipleAnswerQuestion,
-  SurveyOpenEndedQuestion,
-  SurveyQuestion,
+  AnsweredSurveyMultipleAnswerQuestion,
+  AnsweredSurveyOpenEndedQuestion,
+  AnsweredSurveyQuestion,
   SurveyQuestionType,
-  SurveySingleAnswerQuestion,
+  AnsweredSurveySingleAnswerQuestion,
 } from "../../../domain/question";
 
-export const AnsweredQuestion: React.FC<SurveyQuestion> = (props) => {
+export const AnsweredQuestion: React.FC<AnsweredSurveyQuestion> = (props) => {
   if (props.type === SurveyQuestionType.singleAnswer) {
     return <AnsweredSingleAnswerQuestion {...props} />;
   }
@@ -18,11 +18,11 @@ export const AnsweredQuestion: React.FC<SurveyQuestion> = (props) => {
   return <AnsweredOpenEndedQuestion {...props} />;
 };
 
-type AnsweredSingleAnswerQuestionProps = SurveySingleAnswerQuestion;
+type AnsweredSingleAnswerQuestionProps = AnsweredSurveySingleAnswerQuestion;
 declare const AnsweredSingleAnswerQuestion: React.FC<AnsweredSingleAnswerQuestionProps>;
 
-type AnsweredMultipleAnswerQuestionProps = SurveyMultipleAnswerQuestion;
+type AnsweredMultipleAnswerQuestionProps = AnsweredSurveyMultipleAnswerQuestion;
 declare const AnsweredMultipleAnswerQuestion: React.FC<AnsweredMultipleAnswerQuestionProps>;
 
-type AnsweredOpenEndedQuestionProps = SurveyOpenEndedQuestion;
+type AnsweredOpenEndedQuestionProps = AnsweredSurveyOpenEndedQuestion;
 declare const AnsweredOpenEndedQuestion: React.FC<AnsweredOpenEndedQuestionProps>;
