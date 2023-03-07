@@ -2,19 +2,12 @@ import * as React from "react";
 import {
   AnsweredSurveyMultipleAnswerQuestion,
   AnsweredSurveyOpenEndedQuestion,
+  AnsweredSurveyQuestion,
   SurveyQuestionType,
   AnsweredSurveySingleAnswerQuestion,
-  NewSurveySingleAnswerQuestion,
-  NewSurveyMultipleAnswerQuestion,
-  NewSurveyOpenEndedQuestion,
 } from "../../domain/question";
 
-type QuestionProps =
-  | SingleAnswerQuestionProps
-  | MultipleAnswerQuestionProps
-  | OpenEndedQuestionProps;
-
-export const Question: React.FC<QuestionProps> = (props) => {
+export const Question: React.FC<AnsweredSurveyQuestion> = (props) => {
   if (props.type === SurveyQuestionType.singleAnswer) {
     return <SingleAnswerQuestion {...props} />;
   }
@@ -26,14 +19,11 @@ export const Question: React.FC<QuestionProps> = (props) => {
   return <OpenEndedQuestion {...props} />;
 };
 
-type SingleAnswerQuestionProps = NewSurveySingleAnswerQuestion &
-  Partial<Pick<AnsweredSurveySingleAnswerQuestion, "selectedAnswerId">>;
+type SingleAnswerQuestionProps = AnsweredSurveySingleAnswerQuestion;
 declare const SingleAnswerQuestion: React.FC<SingleAnswerQuestionProps>;
 
-type MultipleAnswerQuestionProps = NewSurveyMultipleAnswerQuestion &
-  Partial<Pick<AnsweredSurveyMultipleAnswerQuestion, "selectedAnswerIds">>;
+type MultipleAnswerQuestionProps = AnsweredSurveyMultipleAnswerQuestion;
 declare const MultipleAnswerQuestion: React.FC<MultipleAnswerQuestionProps>;
 
-type OpenEndedQuestionProps = NewSurveyOpenEndedQuestion &
-  Partial<Pick<AnsweredSurveyOpenEndedQuestion, "answer">>;
+type OpenEndedQuestionProps = AnsweredSurveyOpenEndedQuestion;
 declare const OpenEndedQuestion: React.FC<OpenEndedQuestionProps>;

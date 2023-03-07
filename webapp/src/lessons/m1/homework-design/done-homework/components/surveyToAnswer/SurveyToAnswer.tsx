@@ -9,42 +9,24 @@ interface SurveyToAnswerProps {
 }
 
 export const SurveyToAnswer: React.FC<SurveyToAnswerProps> = (props) => {
-  if (props.isNew) {
-    return <NewSurveyToAnswer surveyId={props.surveyId} />;
-  }
-  return <SurveyToEdit surveyId={props.surveyId} />;
+  const survey = props.isNew
+    ? mapNewSurveyToFormData(loadNewSurveyToAnswer(props.surveyId))
+    : loadSurveyToEdit(props.surveyId);
+  return <SurveyToAnswerContent {...survey} />;
 };
 
-interface SurveyToEditProps {
-  surveyId: string;
-}
-const SurveyToEdit: React.FC<SurveyToEditProps> = (props) => {
-  const survey = loadSurveyToEdit(props.surveyId);
-
-  return (
-    <>
-      {survey.topic}
-      {survey.questions.map((question) => (
-        <Question {...question} />
-      ))}
-    </>
-  );
-};
 declare const loadSurveyToEdit: (surveyId: string) => SurveyToEditDto;
 
-interface NewSurveyToAnswer {
-  surveyId: string;
-}
-const NewSurveyToAnswer: React.FC<NewSurveyToAnswer> = (props) => {
-  const survey = loadNewSurveyToAnswer(props.surveyId);
-
-  return (
-    <>
-      {survey.topic}
-      {survey.questions.map((question) => (
-        <Question {...question} />
-      ))}
-    </>
-  );
-};
+type SurveyToAnswerContentProps = SurveyToEditDto;
+const SurveyToAnswerContent: React.FC<SurveyToAnswerContentProps> = (
+  survey
+) => (
+  <>
+    {survey.topic}
+    {survey.questions.map((question) => (
+      <Question {...question} />
+    ))}
+  </>
+);
 declare const loadNewSurveyToAnswer: (surveyId: string) => NewSurveyDto;
+declare const mapNewSurveyToFormData: (survey: NewSurveyDto) => SurveyToEditDto;
