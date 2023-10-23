@@ -39,6 +39,7 @@ const SingleAnswerQuestionSummary: React.FC<
       expectedAnswersCount={props.respondentsNumber}
       question={props.question}
     />
+    TODO K: only interface
     {/* <SingleAnswerQuestionSummaryTable /> */}
     {/* <SingleAnswerQuestionSummaryGraph /> */}
   </>
@@ -55,6 +56,7 @@ const MultipleAnswerQuestionSummary: React.FC<
       expectedAnswersCount={props.respondentsNumber}
       question={props.question}
     />
+    TODO K: only interface
     {/* <MultipleAnswerQuestionSummaryTable /> */}
     {/* <MultipleAnswerQuestionSummaryGraph /> */}
   </>
@@ -72,6 +74,7 @@ const OpenEndedQuestionSummary: React.FC<OpenEndedQuestionSummaryProps> = (
       expectedAnswersCount={props.respondentsNumber}
       question={props.question}
     />
+    TODO K: only interface
     {/* <OpenEndedQuestionSummaryTable /> */}
   </>
 );
@@ -86,8 +89,8 @@ const QuestionSummaryHeader: React.FC<QuestionSummaryHeaderProps> = (props) => (
     {/* title */}
     {props.question}
     {/* subtitle */}
-    {props.expectedAnswersCount} {props.answersCount}{" "}
-    {props.expectedAnswersCount - props.answersCount}
+    oczekiwane: {props.expectedAnswersCount} odpowiedzi: {props.answersCount}{" "}
+    pominięte: {props.expectedAnswersCount - props.answersCount}
   </>
 );
 
