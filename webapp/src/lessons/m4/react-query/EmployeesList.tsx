@@ -116,7 +116,7 @@ interface EmployeeListProps {
   onFireClick?: (e: Employee) => void
 }
 
-export const EmployeeList: React.FC<EmployeeListProps> = (props) => {
+export const EmployeeList = (props: EmployeeListProps) => {
   const { employees, onGiveRiseClick, onFireClick } = props
 
   return <>

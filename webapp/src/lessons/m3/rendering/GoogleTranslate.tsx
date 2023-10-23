@@ -25,7 +25,7 @@ export const GoogleTranslate = () => {
       new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: true}, 'google_translate_element');
       setCookie('googtrans', '/en/es',1);
     }
-  
+
     if (!loaded){
       getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit")
       setLoaded(true)

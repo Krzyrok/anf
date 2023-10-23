@@ -23,7 +23,7 @@ const ErrorImage = styled.img`
   margin-bottom: -110px;
 `;
 
-export const ErrorModal: React.FC<ErrorModalProps> = (props) => {
+export const ErrorModal = (props: ErrorModalProps) => {
   const { isOpen, errorMessage, onClose } = props
 
   useLogMessage(`Error Modal displayed '${errorMessage.type}`, "ERROR", isOpen);

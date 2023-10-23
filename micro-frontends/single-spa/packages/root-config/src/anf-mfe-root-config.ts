@@ -1,8 +1,8 @@
-import { registerApplication, start } from "single-spa";
+import { LifeCycles, registerApplication, start } from "single-spa";
 
 registerApplication({
   name: "@anf-mfe/header",
-  app: () => System.import("@anf-mfe/header"),
+  app: () => System.import<LifeCycles>("@anf-mfe/header"),
   activeWhen: ["/"],
 });
 
@@ -13,19 +13,19 @@ start({
 window.addEventListener('single-spa:first-mount', () => {
   registerApplication({
     name: "@anf-mfe/employees",
-    app: () => System.import("@anf-mfe/employees"),
+    app: () => System.import<LifeCycles>("@anf-mfe/employees"),
     activeWhen: ["/employees"],
   });
 
   registerApplication({
     name: "@anf-mfe/settings",
-    app: () => System.import("@anf-mfe/settings"),
+    app: () => System.import<LifeCycles>("@anf-mfe/settings"),
     activeWhen: ["/settings"],
   });
 
   registerApplication({
     name: "settings-angular",
-    app: () => System.import("settings-angular"),
+    app: () => System.import<LifeCycles>("settings-angular"),
     activeWhen: ["/settings-angular"],
   });
 });

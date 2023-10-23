@@ -18,7 +18,7 @@ const TrendWrapper = styled.span<{ color: string }>`
   color: ${(props) => props.color};
 `;
 
-const Trend: React.FC<{ delta?: number }> = ({ delta }) => {
+const Trend = ({ delta }: { delta?: number }) => {
   if (!delta) {
     return null;
   }
@@ -30,7 +30,7 @@ const Trend: React.FC<{ delta?: number }> = ({ delta }) => {
   return <TrendWrapper color="#080">⬆︎</TrendWrapper>;
 }
 
-const FormatAmount: React.FC<{ amount?: number, decimals: number }> = ({ amount, decimals = 2 }) => {
+const FormatAmount = ({ amount, decimals = 2 }: { amount?: number, decimals: number }) => {
   if (typeof amount !== 'number' || !isFinite(amount)) {
     return null;
   }
@@ -111,12 +111,12 @@ const flags = {
   CHF,
 }
 
-const CurrencyRate: React.FC<{
+const CurrencyRate = (props: {
   currency: keyof typeof flags;
   rate: number;
   delta?: number;
   amount?: number;
-}> = (props) => {
+}) => {
   const {
     currency,
     rate,
@@ -159,7 +159,7 @@ interface CurrencyExchangeProps {
   chfDelta?: number;
 }
 
-export const CurrencyExchangeView: React.FC<CurrencyExchangeProps> = (props) => {
+export const CurrencyExchangeView = (props: CurrencyExchangeProps) => {
   const [amount, setAmount] = useState(0);
   const {
     usdRate, usdDelta,

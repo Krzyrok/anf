@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+
+import { StoryFn, Meta } from '@storybook/react';
 
 import { TextField } from './TextField';
 
@@ -17,7 +17,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ComponentProps<typeof TextField>> =
+const Template: StoryFn<ComponentProps<typeof TextField>> =
   (args) => <TextField {...args} />;
 
 export const Empty = Template.bind({});

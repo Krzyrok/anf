@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import contacts from '../contacts.json';
-import { ContactForm } from '../ContactForm';
+import contacts from '../src/contacts.json';
+import { ContactForm } from '../src/ContactForm';
 
 describe('ContactForm Component', () => {
   it('should be stateless component (no setState, only props)', () => {

@@ -27,7 +27,7 @@ type ErrorScreenState =
     message: UserErrorMessage
   }
 
-export const ErrorScreenProvider: React.FC<ErrorScreenProviderProps> = (props) => {
+export const ErrorScreenProvider = (props: React.PropsWithChildren<ErrorScreenProviderProps>) => {
   const [errorScreen, setErrorScreen] = useState<ErrorScreenState>({ layout: "NO_ERROR" })
   const { logger } = useLogger()
 

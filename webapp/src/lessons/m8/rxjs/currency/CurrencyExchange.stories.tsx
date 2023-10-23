@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
 
-import { lessons } from 'stories';
+import { Meta } from '@storybook/react';
+
+
 import { CurrencyExchangeView } from 'ui/currency-exchange/CurrencyExchangeView';
 
 export default {
-  title: lessons.m8.add('RxJS').toString(),
+  title: 'Lessons/M8 Reactive/RxJS',
   argTypes: {}
 } as Meta;
 
-export const CurrencyExchange: React.FC = () => {
+export const CurrencyExchange = () => {
   const props = {
     usdRate: 4.0057,
     eurRate: 4.2311,
@@ -21,7 +21,7 @@ export const CurrencyExchange: React.FC = () => {
   return <CurrencyExchangeView {...props} />
 }
 
-export const CurrencyExchangeWithDelta: React.FC = () => {
+export const CurrencyExchangeWithDelta = () => {
   const props = {
     usdRate: 4.0057,
     usdDelta: -0.013,

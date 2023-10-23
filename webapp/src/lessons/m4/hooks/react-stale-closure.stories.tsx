@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from 'ui/atoms';
 import { delay } from 'lib/async';
 import { randomBetween } from 'lib/random';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m4.add('Hooks').toString(),
+  title: 'Lessons/M4 Hooks & Contexts/Hooks',
   argTypes: {
   },
 } as Meta;

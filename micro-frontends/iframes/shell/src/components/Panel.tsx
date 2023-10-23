@@ -5,9 +5,10 @@ export interface PanelProps {
   title?: string;
   icon?: string;
   iconHelp?: string;
+  children?: React.ReactNode;
 }
 
-const Panel: React.FC<PanelProps> = (props) => {
+const Panel = (props: PanelProps) => {
   const { children, title, icon, iconHelp } = props;
 
   return (

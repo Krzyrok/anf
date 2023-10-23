@@ -5,6 +5,8 @@ const dataTestId = (testId: string) => `[data-testid="${testId}"]`
 describe('AuthorizeDevice', () => {
   describe('[primitive]', () => {
     it('should authorize a device successfully after the user passes the correct password', () => {
+      cy.setDevicePixelRatio(1);
+
       cy.visit('/')
       cy.viewport(1000, 720)
 

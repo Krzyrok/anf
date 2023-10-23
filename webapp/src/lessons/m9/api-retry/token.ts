@@ -32,6 +32,12 @@ const client = axios.create({ baseURL: BASE_URL });
 // };
 // rax.attach(client);
 
+// Odkomentuj poniższe, jeżeli używasz axiosRetry albo rax
+// export const getTokenInstruction = async () => {
+//   const response = await client.post<TokenInstruction>(`/banking/token`)
+//   return response.data
+// }
+
 export interface TokenInstruction {
   instruction: string
   tokenId: string

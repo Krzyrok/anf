@@ -36,7 +36,12 @@ module.exports = {
     "json",
   ],
   "moduleNameMapper": {
+    // https://github.com/axios/axios/issues/5026
+    "axios": path.resolve(__dirname, "../../../node_modules/axios/dist/axios.js"),
     // https://github.com/remarkjs/react-markdown/issues/635
     "react-markdown": path.resolve(__dirname, "../../../node_modules/react-markdown/react-markdown.min.js"),
+    // transitive dependencies of @tanstack/react-query-devtools export esmodules
+    "copy-anything": path.resolve(__dirname, "../../../node_modules/copy-anything/dist/cjs/index.cjs"),
+    "is-what": path.resolve(__dirname, "../../../node_modules/is-what/dist/cjs/index.cjs"),
   },
-}
+};

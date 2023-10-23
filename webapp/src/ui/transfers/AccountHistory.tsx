@@ -7,7 +7,7 @@ import { DropdownField, TextField, ButtonList } from 'ui/molecules';
 import { TransfersListing } from './TransfersListing';
 import { AccountHistoryLayout } from './styled';
 
-export const AccountHistory: React.FC = () => {
+export const AccountHistory = () => {
   const [transfers, setTransfers] = useState<Transfer[]>()
   const [isLoading, setLoading] = useState(true) // cannot set false initially ;)
 

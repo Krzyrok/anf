@@ -16,7 +16,7 @@ interface ChangeLimitsProcessProps {
   onCancel: () => void
 }
 
-export const ChangeLimitsProcess: React.FC<ChangeLimitsProcessProps> = (props) => {
+export const ChangeLimitsProcess = (props: ChangeLimitsProcessProps) => {
   const { onSuccess, onCancel } = props
 
   // PRACA DOMOWA: zaimplementuj proces

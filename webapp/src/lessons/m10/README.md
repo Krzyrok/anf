@@ -34,7 +34,7 @@ W tym module uczymy się o Testach End-to-End. Omawiamy problematykę, przygląd
     - `integration/*` - testy, pomimo nazwy, z reguły E2E 😅
     - `screenshots/*`, `snapshots/*`, `videos/*` - jak sama nazwa wskazuje
     - `plugins/*`, `utils/*` - jak sama nazwa wskazuje
-  - `cypress.json` - config, do którego odwołują się npm scripts, np. `cypress run --project ./src/lessons/m10`
+  - `cypress.config.js` - config, do którego odwołują się npm scripts, np. `cypress run --project ./src/lessons/m10`
   - `puppeteer/*` - testy puppeteerowe
   - `puppeteer.jest.config.js` - config, do którego odwołują się npm scripts, np. `jest --config ./src/lessons/m10/puppeteer.jest.config.js`
   - `storybook-integration-testing.stories.tsx` (SB) testowanie integracyjne cypress/storybook
@@ -71,7 +71,7 @@ W tym module uczymy się o Testach End-to-End. Omawiamy problematykę, przygląd
 ### accessibility testing
 
 - disclaimer:
-  > Please note that only 20% to 50% of all accessibility issues can automatically be detected. 
+  > Please note that only 20% to 50% of all accessibility issues can automatically be detected.
   > Manual testing is always required. For more information see:
   > https://dequeuniversity.com/curriculum/courses/testingmethods
 - axe

@@ -13,7 +13,7 @@ import { AuthorizeDeviceProcessUnion } from "lessons/m6/authorize-device/hooks/A
  * Można
  * Ale zrobienie _wyjątku od reguły_ (żeby mocki NIE miały logiki) jest dużo lżejsze, bo to 1 IF.
  * I w testach sterujemy już tylko długością tokena.
- * 
+ *
  * TL;DR; radykalne stosowanie się do reguł nie zawsze jest korzystne
  * Przy tak niewielkiej liczbie logiki - test nadal jest czytelny, a setup znacznie lżejszy.
  * Ale gdyby miało przybyć dodatkowej logiki w mockach - to bez przesady - prawdopodobnie poszlibyśmy w kierunku fn.mockImplementation/mockImplementationOnce
@@ -87,11 +87,11 @@ describe.each([
 
     // then
     await findByText("Zapisz to urządzenie jako zaufane")
-    
+
     // when
     const btnTokenCancel = getByTestId("btn-token-cancel")
     fireEvent.click(btnTokenCancel)
-    
+
     // then
     await findByText("Nieznane urządzenie")
     expect(onSuccess).not.toHaveBeenCalled()

@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable import/first */
 import React, { CSSProperties } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m3.add('React & CSS').toString(),
+  title: 'Lessons/M3 React/React & CSS',
   argTypes: {
   },
 } as Meta;

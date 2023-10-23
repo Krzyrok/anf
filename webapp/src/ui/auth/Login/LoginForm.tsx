@@ -19,7 +19,7 @@ interface LoginFormProps {
   error?: string
 }
 
-export const LoginForm: React.FC<LoginFormProps> = (props) => {
+export const LoginForm = (props: LoginFormProps) => {
   const { onSubmit, error } = props
 
   const [username, setUsername] = useState('')

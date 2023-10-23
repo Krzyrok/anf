@@ -23,12 +23,12 @@ const OPACITY = '40'; // 0-255 range
 
 /**
  * Applies Longest-Common-Subsequence-Diff algorithm to imageData formatted arrays
- * 
+ *
  * @param {Uint8ClampedArray} [reference] baseline image
  * @param {Uint8ClampedArray} [test] test image
- * 
+ *
  * @returns {Uint8ClampedArray} diff image
- * 
+ *
  */
 if (typeof module !== 'undefined') {
     module.exports = diverged;
@@ -64,7 +64,7 @@ function diverged(reference, test, h, w) {
     const reducedColumnDiff = reduceColumnDiffRaw(columnDiffRaw, h, w);
     console.timeEnd("reduceColumnDiffRaw");
     // console.log("reducedColumnDiff>>>", reducedColumnDiff);
-    
+
     console.time("unGroupAdjacent");
     const expandedColumns = ungroupAdjacent(reducedColumnDiff, spread, cols_rows_test.columns, h, w);
     console.timeEnd("unGroupAdjacent");
@@ -175,12 +175,12 @@ function reduceColumnDiffRaw(columnDiffs, h, w) {
 
 
             resultColumn = resultColumn.concat(segment);
-            
+
             if (resultColumn.length > h) {
                 console.log('WARNING -- this value is out of bounds!')
             }
         }
-        
+
         reducedColumns[columnIndex] = resultColumn;
     }
 
@@ -199,7 +199,7 @@ function groupAdjacent(columns, spread, h, w) {
     if (!spread) {
         return columns;
     }
-    
+
     /**
      * [getAdjacentArrayBounds retuns existing adjacent lower and upper column bounds]
      * @param  {[int]} pointer [current index]
@@ -240,9 +240,9 @@ function groupAdjacent(columns, spread, h, w) {
     while (columnPointer < w) {
         const adjacentColumnBounds = getAdjacentArrayBounds(columnPointer, spread, w);
         const interpolatedColumns = getInterpolatedSequence(...adjacentColumnBounds);
-        
+
         const columnComposite = new Array();
-        for (var depth = 0; depth < h; depth++) {        
+        for (var depth = 0; depth < h; depth++) {
             columnComposite[depth] = getCompositeColumnDepthValues(columns, interpolatedColumns, depth).join('|');
         }
         groupedColumns.push(columnComposite);
@@ -307,7 +307,7 @@ function imgDataWordArrToColsAndRows(arr, h, w) {
             columns[column] = new Array(h);
         }
         columns[column][depth] = word;
-        
+
         var {row, index} = serialToRowMap(i, h, w);
         if (!rows[row]) {
             rows[row] = new Array(w);
@@ -319,14 +319,14 @@ function imgDataWordArrToColsAndRows(arr, h, w) {
 
 function serialToColumnMap(index, h, w) {
     return {
-        column: index % w, 
+        column: index % w,
         depth: Math.floor(index / w)
     }
 }
 
 function serialToRowMap(index, h, w) {
     return {
-        row: Math.floor(index / w), 
+        row: Math.floor(index / w),
         index: index % w
     }
 }

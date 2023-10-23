@@ -4,7 +4,7 @@ import { ErrorPage } from "./ErrorPage";
 import { LoggerContext } from "../logger";
 import { getUserErrorMessage } from "./messages";
 
-interface ErrorBoundaryProps {};
+interface ErrorBoundaryProps extends React.PropsWithChildren {};
 
 type ErrorBoundaryState =
   | {

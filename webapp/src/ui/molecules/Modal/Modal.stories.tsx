@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { useArgs } from '@storybook/client-api';
+
+import { StoryFn, Meta } from '@storybook/react';
+import { useArgs } from '@storybook/preview-api';
 
 import { Modal } from './Modal';
 import { Button, Typography } from 'ui/atoms';
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ComponentProps<typeof Modal>> = (args) => {
+const Template: StoryFn<ComponentProps<typeof Modal>> = (args) => {
   const [, updateArgs] = useArgs();
 
   return (

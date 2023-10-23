@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from 'ui/atoms';
@@ -32,3 +33,7 @@ export const ReactRefLostUpdate = () => {
     >inc B</Button>
   </>
 }
+
+export default {
+  title: 'Lessons/M3 React/Rendering',
+} as Meta;

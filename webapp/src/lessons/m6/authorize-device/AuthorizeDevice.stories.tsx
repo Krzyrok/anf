@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { AuthorizeDeviceProcessPrimitive } from './hooks/AuthorizeDeviceProcessPrimitive'
@@ -13,9 +13,9 @@ import { Panel } from 'ui/layout';
 import { Button } from 'ui/atoms';
 import { Modal } from 'ui/molecules';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m6.add('Authorize Device').toString(),
+  title: 'Lessons/M6 State Machines/Authorize Device',
   parameters: {
     msw: tokenMockHandlers
   },

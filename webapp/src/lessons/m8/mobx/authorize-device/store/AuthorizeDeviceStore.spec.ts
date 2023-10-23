@@ -29,23 +29,23 @@ describe("AuthorizeDeviceStore", () => {
     it("should notify state changes when successfully allowing device once", async () => {
       // given
       const { store, spy } = configure()
-  
+
       // when
       await store.chooseAllowOnce();
       await store.submitAllowOnce("1234");
-  
+
       // then
       expect(spy.mock.calls).toMatchSnapshot();
     });
-  
+
     it("should notify state changes when failing to allow device once", async () => {
       // given
       const { store, spy } = configure()
-  
+
       // when
       await store.chooseAllowOnce();
       await store.submitAllowOnce("too long");
-  
+
       // then
       expect(spy.mock.calls).toMatchSnapshot();
     });

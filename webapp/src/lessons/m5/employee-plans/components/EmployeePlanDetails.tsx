@@ -12,7 +12,7 @@ interface EmployeePlanDetailsProps {
   plan: Plan
 }
 
-export const EmployeePlanDetails: React.FC<EmployeePlanDetailsProps> = ({ plan }) => {
+export const EmployeePlanDetails = ({ plan }: EmployeePlanDetailsProps) => {
   const changes = Object.values(plan.changes)
   const fires = changes.filter(change => change.type === FIRE_EMPLOYEE)
   const _rises = changes.filter(change => change.type === INCREASE_SALARY)

@@ -13,7 +13,7 @@ interface VideoCallProviderProps {
   videoService?: VideoService
 }
 
-export const VideoCallProvider: React.FC<VideoCallProviderProps> = (props) => {
+export const VideoCallProvider = (props: React.PropsWithChildren<VideoCallProviderProps>) => {
   const { videoService = HTTPVideoService } = props
 
   // minimalny setup, w którym brakuje `cancel`, obsługi błędów itp.

@@ -8,7 +8,7 @@ interface AppProvidersProps {
   logger?: Logger
 }
 
-export const AppProviders: React.FC<AppProvidersProps> = (props) => {
+export const AppProviders = (props: React.PropsWithChildren<AppProvidersProps>) => {
   const { children, logger = new HTTPLogger() } = props
 
   useEffect(() => {

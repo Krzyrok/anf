@@ -1,12 +1,12 @@
 /* eslint-disable import/first */
 import React, { createContext, useContext } from 'react';
+import { Meta } from '@storybook/react';
 
 import { Description, CheckboxField } from 'ui/molecules';
 
 import { useChangingState } from './utils';
 import { Person } from 'mocks';
 import { ItemsList } from 'lessons/m3/typescript/RenderProp';
-
 
 import { initialDummyValue } from './DummyContext';
 import { useToggle } from 'ui/hooks';
@@ -39,7 +39,7 @@ const useDummy = () => {
   return ctx
 }
 
-const DummyProvider: React.FC = (props) => {
+const DummyProvider = (props: React.PropsWithChildren) => {
   const { children } = props
   const [state, update] = useChangingState(initialDummyValue)
   return <DummyStateContext.Provider value={{ ...state, update }}>
@@ -47,7 +47,7 @@ const DummyProvider: React.FC = (props) => {
   </DummyStateContext.Provider>
 }
 
-const DummyListing: React.FC = () => {
+const DummyListing = () => {
   const { persons } = useDummy()
 
   return <ItemsList
@@ -87,3 +87,7 @@ export const NoDefaultValue_OutsideContext = () => {
     {checked && <DummyListing />}
   </>
 }
+
+export default {
+  title: 'Lessons/M4 Hooks & Contexts/Context',
+} as Meta;

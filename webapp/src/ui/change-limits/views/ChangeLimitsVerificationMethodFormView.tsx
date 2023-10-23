@@ -11,7 +11,7 @@ interface ChangeLimitsVerificationMethodFormViewProps {
   onCancel: () => void
 }
 
-export const ChangeLimitsVerificationMethodFormView: React.FC<ChangeLimitsVerificationMethodFormViewProps> = (props) => {
+export const ChangeLimitsVerificationMethodFormView = (props: ChangeLimitsVerificationMethodFormViewProps) => {
   const { settings: { verificationMethod }, onApply, onCancel } = props
   const [currentMethod, setCurrentMethod] = useState(verificationMethod)
 

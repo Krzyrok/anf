@@ -8,7 +8,7 @@ import { AuthorizeDeviceWithErrorHandling as AuthorizeDeviceProcess } from 'less
 import { Button } from 'ui/atoms';
 import { Panel } from 'ui/layout';
 
-export const AuthorizeDevice: React.FC = () => {
+export const AuthorizeDevice = () => {
   const [status, setStatus] = useState<"CLEAN" | "RUNNING" | "SUCCESS" | "LOGGED_OUT">("CLEAN")
   const start = () => { setStatus("RUNNING") }
 

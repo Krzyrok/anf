@@ -1,14 +1,14 @@
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 
 import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
-import { lessons } from 'stories';
+
 import { Input, Typography } from 'ui/atoms';
 export default {
-  title: lessons.m10.add('Accessibility').toString(),
+  title: 'Lessons/M10 End-to-end Testing/Accessibility',
   argTypes: {
   },
 } as Meta;

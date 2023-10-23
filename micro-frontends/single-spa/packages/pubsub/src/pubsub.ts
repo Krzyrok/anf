@@ -1,4 +1,5 @@
 import { PubSub, SubscriberFn } from '../types.d';
+
 export class PubSubImpl implements PubSub {
   private subscribers: SubscriberFn[] = [];
   private lastEvent?: { type: string, message?: any };

@@ -13,7 +13,7 @@ interface ChangeLimitsAmountFormViewProps {
   onCancel: () => void
 }
 
-export const ChangeLimitsAmountFormView: React.FC<ChangeLimitsAmountFormViewProps> = (props) => {
+export const ChangeLimitsAmountFormView = (props: ChangeLimitsAmountFormViewProps) => {
   const { settings, limitType, onApply, onCancel } = props
   const initialLimitValue = limitType === "DAILY" ? settings.dailyLimit : settings.monthlyLimit
   const [newLimit, setNewLimit] = useState(initialLimitValue)

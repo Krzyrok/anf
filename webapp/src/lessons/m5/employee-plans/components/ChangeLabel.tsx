@@ -35,7 +35,7 @@ const ChangeLabelStyled = styled.span<{
   ${(props) => theme[props.variant]}
 `;
 
-export const ChangeLabel: React.FC<Partial<ChangeLabelProps>> = ({ children, variant = 'NEUTRAL' }) => {
+export const ChangeLabel = ({ children, variant = 'NEUTRAL' }: React.PropsWithChildren<Partial<ChangeLabelProps>>) => {
   return (
     <ChangeLabelStyled variant={variant}>
       {children}

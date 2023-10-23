@@ -4,8 +4,9 @@ import React from 'react';
 import flushPromises from 'flush-promises';
 import { act } from "react-dom/test-utils";
 import { mount } from 'enzyme';
-import { ContactsContainer } from '../ContactsContainer';
-import { ContactsService } from '../contacts.service';
+
+import { ContactsContainer } from '../src/ContactsContainer';
+import { ContactsService } from '../src/contacts.service';
 
 describe('ContactsContainer Component', () => {
   function createMockService() {

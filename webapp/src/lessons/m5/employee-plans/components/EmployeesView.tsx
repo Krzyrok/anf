@@ -117,7 +117,7 @@ const SalarySummariesCell = styled.div<{
   text-align: ${(props) => props.align || 'auto'};
 `
 
-export const EmployeesView: React.FC<EmployeesViewProps> = () => {
+export const EmployeesView = (props: EmployeesViewProps) => {
   const employees = useSelector((state: AppState) => state.employees.data)
   const plans = useSelector((state: AppState) => state.employees.plans)
   const currentPlan = useSelector(getCurrentPlan)

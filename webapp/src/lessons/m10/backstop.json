@@ -36,12 +36,14 @@
     {
       "label": "Authorize Device / Choose Method",
       "url": "http://localhost:6006/iframe.html?id=authorize-device-views--choose-method",
+      "readySelector": "#storybook-root > *",
       "misMatchThreshold" : 0.1,
       "requireSameDimensions": true
     },
     {
       "label": "Authorize Device / Add Device Form",
       "url": "http://localhost:6006/iframe.html?id=authorize-device-views--add-device-form",
+      "readySelector": "#storybook-root > *",
       "misMatchThreshold" : 0.1,
       "requireSameDimensions": true,
       "postInteractionWait": 500,
@@ -56,18 +58,21 @@
     {
       "label": "Authorize Device step / Allow Once Token",
       "url": "http://localhost:6006/iframe.html?id=authorize-device-views--allow-once-token",
+      "readySelector": "#storybook-root > *",
       "misMatchThreshold" : 0.1,
       "requireSameDimensions": true
     },
     {
       "label": "Authorize Device / Add Device Token",
       "url": "http://localhost:6006/iframe.html?id=authorize-device-views--add-device-token",
+      "readySelector": "#storybook-root > *",
       "misMatchThreshold" : 0.1,
       "requireSameDimensions": true
     },
     {
       "label": "Authorize Device / Add Device Confirmation",
       "url": "http://localhost:6006/iframe.html?id=authorize-device-views--add-device-confirmation",
+      "readySelector": "#storybook-root > *",
       "misMatchThreshold" : 0.1,
       "requireSameDimensions": true
     }

@@ -1,5 +1,5 @@
-/* eslint-disable import/first */
-import React, { PropsWithChildren, PropsWithRef } from 'react';
+import React from 'react';
+import { Meta } from '@storybook/react';
 import { renderAction } from 'stories';
 
 import { Description } from 'ui/molecules';
@@ -8,13 +8,13 @@ import { useChangingState } from './utils';
 import { DummyContextState, DummyStateContext, initialDummyValue, useDummy } from './DummyContext';
 import { Button, Typography } from 'ui/atoms';
 
-const Updater: React.FC = () => {
+const Updater = () => {
   const { update } = useDummy()
   return <Button variant="SECONDARY" onClick={update}>update</Button>
 }
 
-const SampleData: React.FC<{ data: boolean, label: string }> =
-  (props) => {
+const SampleData =
+  (props: { data: boolean, label: string }) => {
     renderAction('sample data', props.label)
     return <Typography variant="h3">state: {props.data + ''}({props.label})</Typography>
   }
@@ -34,7 +34,7 @@ const ConnectedToDummy = <TSelectorResult, TProps extends TSelectorResult>(
   Component: React.FC<TProps>,
 ) => {
   const Memoized = React.memo(Component) as any as React.FC<TProps>
-  const Connected: React.FC<Omit<TProps, keyof TSelectorResult>> = (props) => {
+  const Connected = (props: React.PropsWithChildren<Omit<TProps, keyof TSelectorResult>>) => {
     const ctx = useDummy()
     const selected = contextSelector(ctx)
     return <Memoized children={props.children} {...props} {...selected as TProps} />
@@ -47,7 +47,7 @@ const ConnectedMemoizedConsumer = ConnectedToDummy(
   ctx => ({ data: ctx.loading }), SampleData,
 )
 
-const ChildrenProvider: React.FC = (props) => {
+const ChildrenProvider = (props: React.PropsWithChildren) => {
   const { children } = props
   const [state, update] = useChangingState(initialDummyValue)
   renderAction('Provider')
@@ -72,3 +72,7 @@ export const ConnectedAndMemoized = () => {
     </ChildrenProvider>
   </>
 }
+
+export default {
+  title: 'Lessons/M4 Hooks & Contexts/Context',
+} as Meta;

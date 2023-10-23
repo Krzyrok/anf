@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import classes from "./EmployeeList.module.css";
 
@@ -18,7 +18,7 @@ export interface Employee {
 }
 
 const EmployeeList = (props: { settings?: Settings, isWebComponent?: boolean }) => {
-  const { isLoading, error, data } = useQuery('employees', (): Promise<Employee[]> => {
+  const { isLoading, error, data } = useQuery(['employees'], (): Promise<Employee[]> => {
     return fetch('http://localhost:3000/employees').then(res => res.json());
   });
 

@@ -3,7 +3,7 @@
 ## Testy Reactowe + Komponenty Funkcyjne
 
 - folder: `lessons/m3/homework/contacts`
-- uruchomienie: `npm t` z folderu `webapp`
+- uruchomienie: `npm t` z powyższego folderu
 - zadanie bezpośrednie: przepisać komponenty klasowe na funkcyjne
 - zadanie pośrednie: "wyprostować" testy
   - przyjrzyj się, jak zmontowane są asercje. Jak się będzie z nimi pracowało? Co można poprawić?
@@ -26,7 +26,7 @@
 - uruchomienie SB: `npm run storybook` z folderu `webapp`; w SB sekcja: M3 React / Homework / Employee Plans
 - zadanie:
   - uruchom devtoolsy, przeklikaj funkcjonalność - a także przeczytaj kodzik
-  - znajdź miejsca, w których obliczenia są wykonywane nadmiarowo i zastosuj optymalizacje 
+  - znajdź miejsca, w których obliczenia są wykonywane nadmiarowo i zastosuj optymalizacje
 
 ## Własny Projekt - Storybook
 

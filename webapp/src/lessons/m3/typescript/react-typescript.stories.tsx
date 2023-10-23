@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable import/first */
 import React, { useEffect, useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from 'ui/atoms';
@@ -11,15 +11,15 @@ import { WithLoading } from './HOCWithLoading'
 import { ItemsList } from './RenderProp';
 import { CompanyEmployeeList, CompanyEmployee } from './UnionProps';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m3.add('TypeScript').toString(),
+  title: 'Lessons/M3 React/TypeScript',
   argTypes: {
   },
 } as Meta;
 
 
-const PersonsList: React.FC<{ persons: Person[] }> = (props) => {
+const PersonsList = (props: { persons: Person[] }) => {
   const { persons } = props
   return <ul>
     { persons.map( p => <li key={p.id}>{p.firstName} {p.lastName}</li> ) }

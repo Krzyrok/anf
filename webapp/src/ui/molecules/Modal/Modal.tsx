@@ -29,12 +29,12 @@ type ModalProps = Pick< ComponentProps<typeof ReactModal>, "isOpen" | "onRequest
 // ReactModal requires that the app root element is provided, so that it can
 // hide the app from screen readers (by setting aria-hidden="true") when the
 // modal is open. We're using #root as default.
-const root = document.querySelector('#root');
+const root = document.querySelector('#root, #storybook-root');
 if (root) {
-  ReactModal.setAppElement('#root');
+  ReactModal.setAppElement(`#${root.id}`);
 }
 
-export const Modal: React.FC<ModalProps> = (props) => {
+export const Modal = (props: React.PropsWithChildren<ModalProps>) => {
   const { isOpen, onRequestClose, children } = props
 
   return <ReactModal
@@ -52,7 +52,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
   </ReactModal>
 }
 
-export const ModalButtons: React.FC<{}> = (props) => {
+export const ModalButtons = (props: React.PropsWithChildren) => {
   const { children } = props;
   return (
     <footer className={modalClass.buttons}>

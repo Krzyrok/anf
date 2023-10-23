@@ -44,14 +44,14 @@ const Wrapper = styled.div<{
   }
 `;
 
-export const FormField: React.FC<{
+export const FormField = (props: React.PropsWithChildren<{
   label: string;
   className?: string;
   error?: string;
   layoutDirection?: "horizontal" | "vertical";
   noMargin?: boolean;
   htmlFor?: string;
-}> = (props) => {
+}>) => {
   const { className, children, label, error, layoutDirection, htmlFor, noMargin } = props;
   return (
     <Wrapper layoutDirection={layoutDirection} noMargin={noMargin} className={className}>

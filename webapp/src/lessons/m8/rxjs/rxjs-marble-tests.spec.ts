@@ -8,13 +8,13 @@ const createScheduler = () => new TestScheduler((actual, expected) => {
 
 /**
  * 🔥 MARBLE TESTS
- * 
+ *
  * expectObservable: asercje na strumieniu wynikowym
  * expectSubscriptions: asercje na subskrypcji jako takiej (od kiedy, do kiedy)
- * 
+ *
  * cold - symulowany “cold”, subskrypcja automatycznie przy starcie testu
  * hot - symulowany “hot”, który działa wcześniej, subskrypcja w punkcie oznaczonym przez ^
- * 
+ *
  * | - standardowo oznacza COMPLETE
  * ! - oznacza zakończenie subskrypcji
  * - - pierwszy element osi (pierwszy frame) - tzw. "zero frame"
@@ -149,7 +149,7 @@ describe('RxJS subscriptions', () => {
         //    i sęk w tym, że - kiedy wynik jeszcze nie subskrybuje B, to B już emituje. I te elementy "przepadają" (3)
         // potem jest C `hot`, analogicznie; dopóki B jest aktywnie subskrybowany, wszystko co `hot` C wypchnie zanim samo będzie subskrybowanee, przepada
         // na koniec D `cold`. Rozpoczyna emisję, kiedy jest subskrybowane. A to następuje, kiedy concat (wynikowy) przepnie się z C na D.
-        //    i dlatego oś D jest niejako "doklejana" na koniec wynikowej osi        
+        //    i dlatego oś D jest niejako "doklejana" na koniec wynikowej osi
         const a =   cold("--1--2--|");
         const b =    hot("^----3----4--|");
         const c =    hot("^-------5---6---7---8-|");

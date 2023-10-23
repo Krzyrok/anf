@@ -6,7 +6,7 @@ import { Container } from 'ui/layout';
 import { CurrencyExchangeView } from 'ui/currency-exchange/CurrencyExchangeView';
 import { CURRENCY_SVC_URL } from './config';
 
-export const CurrencyExchange: React.FC = () => {
+export const CurrencyExchange = () => {
   const props = {
     usdRate: 4.0057,
     usdDelta: -0.013,

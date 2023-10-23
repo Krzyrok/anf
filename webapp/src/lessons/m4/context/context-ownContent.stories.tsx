@@ -1,11 +1,11 @@
 /* eslint-disable import/first */
 import React from 'react';
+import { Meta } from '@storybook/react';
 
 import { Description } from 'ui/molecules';
 
 import { renderAction } from 'stories';
 import { useChangingState } from './utils';
-
 
 import { DummyStateContext, initialDummyValue } from './DummyContext';
 import { DummyDispatcher, DummyListing } from './DummyComponents';
@@ -41,7 +41,7 @@ export const OwnContent = () => {
 
 
 
-const ChildrenProvider: React.FC = (props) => {
+const ChildrenProvider = (props: React.PropsWithChildren) => {
   const { children } = props
   const [state, update] = useChangingState(initialDummyValue)
   renderAction('Provider')
@@ -64,3 +64,7 @@ export const ChildrenContent = () => {
     </ChildrenProvider>
   </>
 }
+
+export default {
+  title: 'Lessons/M4 Hooks & Contexts/Context',
+} as Meta;

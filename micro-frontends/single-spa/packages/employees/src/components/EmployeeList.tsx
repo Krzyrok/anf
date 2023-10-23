@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 // 1. Config single-spa ma ustawione orgname "@anf-mfe", i uzupełnia config webpacka o to,
 //    że wszelkie pakiety wewn. "@anf-mfe" będą ładowane dynamicznie
@@ -29,7 +29,7 @@ export interface Employee {
 }
 
 const EmployeeList = (props: { settings?: Settings, isWebComponent?: boolean }) => {
-  const { isLoading, error, data } = useQuery('employees', (): Promise<Employee[]> => {
+  const { isLoading, error, data } = useQuery(['employees'], (): Promise<Employee[]> => {
     return fetch('http://localhost:3000/employees').then(res => res.json());
   });
 

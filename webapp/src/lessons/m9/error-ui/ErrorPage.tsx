@@ -7,7 +7,7 @@ interface ErrorPageProps {
   errorMessage: UserErrorMessage
 }
 
-export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
+export const ErrorPage = (props: ErrorPageProps) => {
   const { errorMessage } = props
 
   return <ErrorContent message={errorMessage} />

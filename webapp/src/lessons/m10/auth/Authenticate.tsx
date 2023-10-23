@@ -5,7 +5,7 @@ import { LoginForm } from 'ui/auth/Login/LoginForm';
 
 interface AuthenticateProps {}
 
-export const Authenticate: React.FC<AuthenticateProps> = (props) => {
+export const Authenticate = (props: AuthenticateProps) => {
   const { login, error } = useAuth()
   return <LoginForm onSubmit={login}
     {...(error ? { error: "Nieprawidłowy login lub hasło" } : {})}

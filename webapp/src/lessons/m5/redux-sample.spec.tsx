@@ -14,7 +14,7 @@ import {
   changeAll,
 } from "./redux-sample";
 
-const SampleComponent: React.FC = () => {
+const SampleComponent = () => {
   const a = useSelector(getA);
   const b = useSelector(getB);
   const dispatch = useDispatch();

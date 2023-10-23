@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { createContext, memo, useCallback, useContext, useReducer, useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
 
-import produce from 'immer'
+import { Meta } from '@storybook/react';
+
+import { produce } from 'immer'
 import { Button } from 'ui/atoms';
 import { Section } from 'ui/layout';
 import { Person, mockJohn } from 'mocks';
 import { TextField } from 'ui/molecules';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m5.add('Immer').toString(),
+  title: 'Lessons/M5 Redux/Immer',
   argTypes: {
   },
 } as Meta;
@@ -45,7 +45,7 @@ function useImmutableState<TState>(initial: TState){
 
 
 
-const PersonProvider: React.FC = (props) => {
+const PersonProvider = (props: React.PropsWithChildren) => {
   const { children } = props
 
   // każde z 3 rozwiązań działa

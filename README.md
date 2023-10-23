@@ -17,7 +17,7 @@
                '---'        `----'     
 ```
 
-## agenda
+## Agenda
 
 - Moduł 1: Type-Safety
 - Moduł 2: Testowanie

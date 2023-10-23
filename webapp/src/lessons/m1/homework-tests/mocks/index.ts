@@ -1,26 +1,26 @@
 export interface Todo {
-	id: string;
-	title: string;
-	marked: boolean;
+  id: string;
+  title: string;
+  marked: boolean;
 }
 
 export const todos: Todo[] = require('./todos.json')
 
 type ShoppingItem = {
-	type: string;
-	name: string;
-	price: number;
-	qty: number;
+  type: string;
+  name: string;
+  price: number;
+  qty: number;
 }
 
 export interface ShoppingItemWithId extends ShoppingItem {
-	id: number;
+  id: number;
 }
 
 export const shoppingList: ShoppingItemWithId[] = require('./shopping-list.json')
 
 export type ShoppingItemsDictionary = {
-	[idx: number]: ShoppingItem;
+  [idx: number]: ShoppingItem;
 }
 
 export const shoppingDict: ShoppingItemsDictionary = require('./shopping-dict.json')

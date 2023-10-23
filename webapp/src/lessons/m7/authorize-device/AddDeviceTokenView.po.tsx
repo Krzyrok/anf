@@ -40,7 +40,7 @@ class AddDeviceTokenViewPO {
   clickTokenCancelButton(){
     fireEvent.click(this.elements.tokenCancelButton)
   }
-  
+
   clickTokenSubmitButton(){
     fireEvent.click(this.elements.tokenSubmitButton)
   }
@@ -57,7 +57,7 @@ class AddDeviceTokenViewPO {
     this.setAddDevicePassword(password)
     this.clickTokenSubmitButton()
   }
-  
+
   async expectTextDisplayed(text: string){
     return findByText(this.container, text)
   }

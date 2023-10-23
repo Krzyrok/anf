@@ -1,14 +1,14 @@
 /* eslint-disable import/first */
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 
 import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m3.add('Broken child').toString(),
+  title: 'Lessons/M3 React/Broken child',
   argTypes: {
   },
 } as Meta;
@@ -46,7 +46,7 @@ const AppMenu = styled.div`
   border-right: 1px solid #ccc;
 `;
 
-const DummyAppContent: React.FC = (props) => {
+const DummyAppContent = (props: React.PropsWithChildren) => {
   return <AppUI>
     <AppMenu>
       <AppBox height={60} marginBottom={50} />

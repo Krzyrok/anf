@@ -69,7 +69,7 @@ const LogoutLink = styled(LogoutButton)`
   min-width: fit-content;
 `;
 
-export const AppHeader: React.FC = () => {
+export const AppHeader = () => {
   return <Header>
     <HeaderContainer>
       <HeaderLogo to="/" data-testid="link-app-logo">ACME</HeaderLogo>

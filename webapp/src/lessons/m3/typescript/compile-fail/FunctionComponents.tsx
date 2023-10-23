@@ -5,7 +5,7 @@ interface MyProps {
   optionalData?: number
 }
 
-const OptionalChildren: React.FC<MyProps> = ({data}) => <>{data}</>
+const OptionalChildren = ({data}: React.PropsWithChildren<MyProps>) => <>{data}</>
 const optional1 = <OptionalChildren data={123} />
 const optional2 = <OptionalChildren data={123}>
   siema!

@@ -1,6 +1,6 @@
 /* eslint-disable import/first */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 import './pubsub';
 
@@ -11,11 +11,10 @@ import './index.css';
 
 import './bundle-web-component';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // 🔥 schowaj komponent reaktowy (uruchamiany przez ReactDOM.render):
