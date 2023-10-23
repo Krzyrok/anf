@@ -1,6 +1,7 @@
 /* eslint-disable import/first */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { createContext, useContext } from 'react';
+import { Meta } from '@storybook/react';
 
 import { Button } from 'ui/atoms';
 import { Description } from 'ui/molecules';
@@ -8,11 +9,10 @@ import { Description } from 'ui/molecules';
 import { renderAction } from 'stories';
 import { useChangingState } from './utils';
 
-
 import { DummyStateContext, initialDummyValue, useDummy } from './DummyContext';
 import { ItemsList } from 'lessons/m3/typescript/RenderProp';
 
-export const DummyListing: React.FC = () => {
+export const DummyListing = () => {
   const { persons } = useDummy()
   renderAction('Listing')
 
@@ -43,7 +43,7 @@ const DummySeparateDispatcher = () => {
   return <Button variant="SECONDARY" onClick={update}>update</Button>
 }
 
-const SeparateProviders: React.FC = (props) => {
+const SeparateProviders = (props: React.PropsWithChildren) => {
   const { children } = props
   const [state, update] = useChangingState(initialDummyValue)
   renderAction('Provider')
@@ -76,3 +76,7 @@ export const SeparateContexts = () => {
     </SeparateProviders>
   </>
 }
+
+export default {
+  title: 'Lessons/M4 Hooks & Contexts/Context',
+} as Meta;

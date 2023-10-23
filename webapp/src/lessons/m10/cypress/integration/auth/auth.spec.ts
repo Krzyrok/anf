@@ -7,6 +7,8 @@ describe('ACME Page Auth', () => {
   });
 
   it('should match snapshots', () => {
+    cy.setDevicePixelRatio(1);
+
     cy.viewport(1000, 720)
     cy.login("admin", "admin")
     cy.waitForFontsToLoad();

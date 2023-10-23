@@ -32,7 +32,7 @@ const useAuthToken = () => {
   // In order to inject token before any child effects (which may contain api calls)
   // we have to use layout effects (which are executed in FIFO order).
   useLayoutEffect(() => {
-    if (token){
+    if (token) {
       return setAuthorizationHeader(token)
     }
   }, [token])
@@ -57,7 +57,7 @@ export const AuthContext = createContext<AuthContextValue | undefined>(undefined
 
 interface AuthProviderProps {}
 
-export const AuthProvider: React.FC<AuthProviderProps> = (props) => {
+export const AuthProvider = (props: React.PropsWithChildren<AuthProviderProps>) => {
   const { children } = props
 
   const value = useAuthToken()

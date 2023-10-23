@@ -52,3 +52,23 @@ Cypress.Commands.add("waitForFontsToLoad", () => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// 🔥 For snapshot testing we have to force Chromium browsers to use 1x pixel density
+// otherwise tests will fail on Retina displays. For more details see:
+// - https://github.com/jaredpalmer/cypress-image-snapshot/issues/129
+// - https://github.com/cypress-io/cypress/issues/6485
+// - https://github.com/cypress-io/cypress/issues/7075
+// - https://github.com/cypress-io/cypress/issues/17375
+Cypress.Commands.add("setDevicePixelRatio", (ratio: number) => {
+  cy.wrap(Cypress.automation('remote:debugger:protocol', {
+    command: 'Emulation.setDeviceMetricsOverride',
+    params: {
+      // target DPR here
+      deviceScaleFactor: ratio,
+      // width and height set to 0 remove overrides
+      width: 0,
+      height: 0,
+      mobile: false,
+    },
+  }).catch(() => { /* non-Chromium browsers */ }))
+})

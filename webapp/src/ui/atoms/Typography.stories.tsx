@@ -1,6 +1,6 @@
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 
 import { Typography } from './Typography';
 
@@ -29,7 +29,7 @@ export default {
   },
 } as Meta;
 
-export const _Typography: React.FC = ({ children }) => {
+export const _Typography = ({ children }: React.PropsWithChildren) => {
   return <>
     <Typography variant="h1">h1. {children}</Typography>
     <Typography variant="h2">h2. {children}</Typography>

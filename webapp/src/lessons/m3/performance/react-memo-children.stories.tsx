@@ -1,12 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { memo } from 'react';
+import { Meta } from '@storybook/react';
 import { renderAction } from 'stories';
 
 import { useToggle } from 'ui/hooks';
 import { CheckboxField, Description } from 'ui/molecules';
 
-const MemoizedComponent: React.FC<{ checked?: boolean }> = memo(
-  ({ children, checked }) => {
+const MemoizedComponent = memo(
+  ({ children, checked }: React.PropsWithChildren<{ checked?: boolean }>) => {
     renderAction(`render MemoizedComponent`)
     return <div>
       I hereby display my <code>children</code>:
@@ -72,3 +72,7 @@ export const ReactMemoChildrenWithMarkup = () => {
     </MemoizedComponent>
   </>
 }
+
+export default {
+  title: 'Lessons/M3 React/Performance',
+} as Meta;

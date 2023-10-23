@@ -7,7 +7,7 @@ import { MockVideoService } from './VideoService';
 
 interface VideoCallParticipantsProps {}
 
-export const VideoCallParticipants: React.FC<VideoCallParticipantsProps> = (props) => {
+export const VideoCallParticipants = (props: VideoCallParticipantsProps) => {
   const participants = useParticipants()
   return participants ? <ul>
     {participants.map(p => <li key={p.id}>{p.name}</li>)}
@@ -31,10 +31,10 @@ const fakeHTTP = async () => [{
 describe('VideoCallParticipants (parametrized context)', () => {
   /**
    * 🔥 UWAGA!
-   * 
+   *
    * W teście uczestniczy prawdziwy kontekst + komponent, który go subskrybuje
    * 🔥 jeśli można, najprostsze rozwiązanie to zamockować call HTTP (np. jest.mock)
-   * 
+   *
    * Ale jeśli zależności jest dużo więcej (np. 5 calli HTTP + jeszcze dodatkowe websockety)
    * to może być łatwiej sparametryzować kontekst - tak jak poniżej
    * (niż pisać litanię N wywołań jest.mock - mockowy serwis byłby jednym, spójnym elementem)

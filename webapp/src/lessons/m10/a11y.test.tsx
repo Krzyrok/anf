@@ -9,6 +9,6 @@ import { AppProviders } from 'AppProviders'
 test.skip('App #a11y', async () => {
   const { container } = render(<AppProviders><App /></AppProviders>)
   const results = await axe(container)
-  
+
   expect(results).toHaveNoViolations()
 })

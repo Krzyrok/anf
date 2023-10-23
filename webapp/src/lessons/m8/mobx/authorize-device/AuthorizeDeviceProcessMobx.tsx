@@ -52,7 +52,7 @@ export const AuthorizeDeviceProcessMobx = observer<AuthorizeDeviceProcessMobxPro
        * NIE KONKRETNE WARTOŚCI (np. store.state.instruction) a referencję na całęgo store'a (patrz: slajd "MobX & React - dobre praktyki")
        * My tutaj robimy wyjątek tylko "szkoleniowo" - chcemy pozostać przy 1 implementacji widoków (które są state-agnostic), i które możemy reużyć w wielu implementacjach (primitive obsession, state union, redux, xstate, mobx...)
        * Innymi słowy, naszym celem jest mieć 5 rozwiązań dla procesu + 5 komponentów-widoków (reużywalnych, dla czytelności) ZAMIAST 5 rozwiązań + 25 komponentów-widoków
-       * 
+       *
        * Czyli w projekcie (nie-szkoleniowym) dalibyśmy:
        * <AuthorizeDeviceAllowOnceTokenView store={store} /> - jeśli przekazujemy store'a przez propsy
        * lub

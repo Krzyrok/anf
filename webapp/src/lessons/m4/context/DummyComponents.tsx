@@ -4,7 +4,7 @@ import { useDummy } from "./DummyContext"
 import { Button } from 'ui/atoms';
 
 // just displaying a list
-export const DummyListing: React.FC = () => {
+export const DummyListing = () => {
   const { persons } = useDummy()
 
   return <ItemsList

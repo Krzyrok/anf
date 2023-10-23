@@ -10,7 +10,7 @@ interface EmployeeChangesProps {
   plan?: Plan
 }
 
-export const EmployeeChanges: React.FC<EmployeeChangesProps> = ({ plan, employee }) => {
+export const EmployeeChanges = ({ plan, employee }: EmployeeChangesProps) => {
   if (!plan) {
     return null;
   } else {

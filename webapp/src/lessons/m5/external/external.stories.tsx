@@ -1,12 +1,12 @@
 /* eslint-disable import/first */
 import React, { memo, useState, useRef, useEffect } from 'react';
-import { Meta } from '@storybook/react/types-6-0';
+import { Meta } from '@storybook/react';
 
-import { lessons, renderAction } from 'stories';
+import { renderAction } from 'stories';
 import { Button } from 'ui/atoms';
 
 export default {
-  title: lessons.m5.add('External').toString(),
+  title: 'Lessons/M5 Redux/External',
   argTypes: {
   },
 } as Meta;
@@ -21,7 +21,7 @@ type SubscribeFn = () => void
 
 /**
  * 🤓 KONTEKST:
- * 
+ *
  * istnieje pewien obiekt ze swoim stanem
  * i chcemy go modyfikować - a jego aktualizacje wyświetlać w Reakcie.
  * ALE 😱 ten obiekt jest poza ekosystemem Reacta - React nie potrafi śledzić na nim zmian
@@ -36,7 +36,7 @@ class StatefulObject {
   log(){
     renderAction('update', this.state.type)
   }
-  
+
   // subscriberFn?: SubscribeFn
   // subscribe(fn: SubscribeFn){
   //   this.subscriberFn = fn
@@ -48,7 +48,7 @@ class StatefulObject {
   async execute(){
     this.state.type = "STARTED" // 👀 mutable
     // this.state = { // 👀 immutable
-    //   ...this.state, 
+    //   ...this.state,
     //   type: "STARTED"
     // }
     this.notify()
@@ -58,7 +58,7 @@ class StatefulObject {
 
     this.state.type = "IN PROGRESS" // 👀 mutable
     // this.state = { // 👀 immutable
-    //   ...this.state, 
+    //   ...this.state,
     //   type: "IN PROGRESS"
     // }
     this.notify()
@@ -67,7 +67,7 @@ class StatefulObject {
 
     this.state.type = "COMPLETE" // 👀 mutable
     // this.state = { // 👀 immutable
-    //   ...this.state, 
+    //   ...this.state,
     //   type: "COMPLETE"
     // }
     this.notify()
@@ -87,7 +87,7 @@ type Stateful = {
   }
 }
 
-const StatefulInfo: React.FC<Stateful> = /* memo */((props) => {
+const StatefulInfo = /* memo */ ((props: Stateful) => {
   return <pre>state: {props.state.type}</pre>
 })
 

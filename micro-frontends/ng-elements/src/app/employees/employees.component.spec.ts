@@ -11,9 +11,9 @@ describe('EmployeesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
+        EmployeesComponent,
         HttpClientTestingModule,
       ],
-      declarations: [ EmployeesComponent ]
     })
     .compileComponents();
   });

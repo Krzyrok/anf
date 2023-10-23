@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 // 1. Taki moduł nie istnieje w package.json, ładowany jest dynamicznie (w runtime, a nie na etapie budowania)
 //    poprzez mechanizm module federation. Typy dla tego modułu zadeklarowane są w remoteTypes.d.ts
@@ -25,7 +25,7 @@ export interface Employee {
 }
 
 const EmployeeList = (props: { settings?: Settings, isWebComponent?: boolean }) => {
-  const { isLoading, error, data } = useQuery('employees', (): Promise<Employee[]> => {
+  const { isLoading, error, data } = useQuery(['employees'], (): Promise<Employee[]> => {
     return fetch('http://localhost:3000/employees').then(res => res.json());
   });
 

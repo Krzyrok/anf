@@ -89,7 +89,7 @@ interface TypographyProps {
   noMargin?: boolean;
 }
 
-export const Typography: React.FC<TypographyProps> = (props) => {
+export const Typography = (props: React.PropsWithChildren<TypographyProps>) => {
   const { id, variant, bold, noMargin, children } = props;
   const { tagName } = styles[variant]; // tagName has to be `IntrinsicElementsKeys` to match "as" prop
   return <StyledTypography variant={variant} as={props.as || tagName} id={id} bold={bold} noMargin={noMargin} children={children} />;

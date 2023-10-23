@@ -10,7 +10,7 @@ interface KaboomSyncProps {
 
 const throwAlways = () => true
 
-export const KaboomSync: React.FC<KaboomSyncProps> = props => {
+export const KaboomSync = (props: React.PropsWithChildren<KaboomSyncProps>) => {
   const { shouldFail = throwAlways, notify, children } = props;
   if (shouldFail()) {
     notify?.("KaboomSync: fail");
@@ -25,7 +25,7 @@ interface KaboomAsyncProps {
   layout: "ERROR_PAGE" | "ERROR_MODAL"
 }
 
-export const KaboomAsync: React.FC<KaboomAsyncProps> = props => {
+export const KaboomAsync = (props: KaboomAsyncProps) => {
   const { kaboomFn, layout } = props;
 
   const { showError } = useErrorScreen();

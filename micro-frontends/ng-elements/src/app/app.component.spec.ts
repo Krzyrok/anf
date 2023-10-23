@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
       ],
     }).compileComponents();
 

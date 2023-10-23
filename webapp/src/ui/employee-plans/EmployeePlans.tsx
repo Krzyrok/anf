@@ -6,6 +6,6 @@ import { EmployeesView } from 'lessons/m3/homework/optimize/EmployeesView';
 // Odkomentuj poniższy import aby użyć implementacji widoku opartej o Redux
 // import { EmployeesReduxContainer as EmployeesView } from 'lessons/m5/employee-plans/components/EmployeesReduxContainer';
 
-export const EmployeePlans: React.FC = () => {
+export const EmployeePlans = () => {
   return <EmployeesView />
 }

@@ -1,14 +1,14 @@
 import React from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { ChangeLimitsProcess } from './ChangeLimitsProcess';
 import { limitsMockHandlers, tokenMockHandlers } from 'api/mock';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m6.add('Change Limits').toString(),
+  title: 'Lessons/M6 State Machines/Change Limits',
   parameters: {
     // W module m7 wprowadzone zostało msw, aby story nie wysyłało prawdziwych żądań HTTP,
     // żeby wyeliminować trochę chorą zależność, że storybook wymaga odpalonej apki.

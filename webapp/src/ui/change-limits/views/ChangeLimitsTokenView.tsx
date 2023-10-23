@@ -15,7 +15,7 @@ interface ChangeLimitsTokenViewProps {
   error: boolean
 }
 
-export const ChangeLimitsTokenView: React.FC<ChangeLimitsTokenViewProps> = (props) => {
+export const ChangeLimitsTokenView = (props: ChangeLimitsTokenViewProps) => {
   const {
     settings: {
       dailyLimit, availableDailyAmount,

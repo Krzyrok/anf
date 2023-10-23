@@ -1,4 +1,8 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { PanelComponent } from '../components/panel/panel.component';
 
 export interface Settings {
   displayCosts?: boolean;
@@ -8,7 +12,13 @@ export interface Settings {
 
 @Component({
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  styleUrls: ['./settings.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    PanelComponent,
+  ],
 })
 export class SettingsComponent {
   // Mapowanie atrybutów webcomponentu na inputy angularowe - input o nazwie

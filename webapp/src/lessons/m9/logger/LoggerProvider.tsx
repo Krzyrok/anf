@@ -23,7 +23,7 @@ interface LoggerProviderProps {
   logger: Logger
 }
 
-export const LoggerProvider: React.FC<LoggerProviderProps> = (props) => {
+export const LoggerProvider = (props: React.PropsWithChildren<LoggerProviderProps>) => {
   const { logger } = props
 
   return <LoggerContext.Provider value={{logger}}>

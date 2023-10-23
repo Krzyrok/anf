@@ -3,7 +3,7 @@ import { Button } from 'ui/atoms';
 
 import { useAuth } from './AuthProvider';
 
-export const LogoutButton: React.FC<{ className?: string }> = (props) => {
+export const LogoutButton = (props: { className?: string }) => {
   const { logout } = useAuth()
   return <Button
     data-testid="btn-logout"

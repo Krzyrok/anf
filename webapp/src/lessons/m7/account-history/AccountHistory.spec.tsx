@@ -25,19 +25,19 @@ describe("AccountHistory", () => {
     expect(spy.mock.calls).toMatchInlineSnapshot(`
       Array [
         Array [
-          Object {
-            "body": "",
-            "bodyUsed": false,
+          RestRequest {
+            "_body": ArrayBuffer [],
+            "_bodyUsed": false,
             "cache": "default",
             "cookies": Object {},
             "credentials": "omit",
-            "destination": "document",
+            "destination": "",
             "headers": HeadersPolyfill {
-              "headers": Object {
+              Symbol(normalizedHeaders): Object {
                 "accept": "application/json, text/plain, */*",
               },
-              "names": Map {
-                "accept" => "Accept",
+              Symbol(rawHeaderNames): Map {
+                "accept" => "accept",
               },
             },
             "id": "",
@@ -46,7 +46,8 @@ describe("AccountHistory", () => {
             "method": "GET",
             "mode": "cors",
             "params": Object {},
-            "redirect": "manual",
+            "priority": "auto",
+            "redirect": "follow",
             "referrer": "",
             "referrerPolicy": "no-referrer",
             "url": "${BASE_URL}/account/transfers",

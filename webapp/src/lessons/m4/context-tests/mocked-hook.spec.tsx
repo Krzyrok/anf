@@ -21,7 +21,7 @@ import { useParticipants } from './video-call-hooks';
 
 interface VideoCallParticipantsProps {}
 
-export const VideoCallParticipants: React.FC<VideoCallParticipantsProps> = (props) => {
+export const VideoCallParticipants = (props: VideoCallParticipantsProps) => {
   const participants = useParticipants()
   return participants ? <ul>
     {participants.map(p => <li key={p.id}>{p.name}</li>)}
@@ -31,11 +31,11 @@ export const VideoCallParticipants: React.FC<VideoCallParticipantsProps> = (prop
 describe('VideoCallParticipants (mocked-hook)', () => {
   /**
    * 🔥 UWAGA!
-   * 
+   *
    * bez opakowania komponentu w kontekst - i bez mockowania hooka
    * poniższy komponent huknąłby takim błędem:
    * (sprawdź, komentując jest.mock powyżej)
-   * 
+   *
    *   ● VideoCallParticipants › should display list of participants fetched from context
    *      Component beyond VideoCallContext!
    */

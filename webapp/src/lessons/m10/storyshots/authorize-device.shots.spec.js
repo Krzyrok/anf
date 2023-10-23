@@ -1,5 +1,6 @@
 import initStoryshots from '@storybook/addon-storyshots';
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
+import { delay } from 'lib/async';
 import { getMatchOptions } from './config';
 
 initStoryshots({
@@ -22,5 +23,6 @@ initStoryshots({
     //   page.evaluate
     //   // ...
     // }
+    beforeScreenshot: () => delay(600),
   })
 });

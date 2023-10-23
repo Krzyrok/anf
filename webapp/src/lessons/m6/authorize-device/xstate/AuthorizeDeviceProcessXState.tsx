@@ -253,5 +253,5 @@ export const AuthorizeDeviceProcessXState = (props: AuthorizeDeviceProcessReduxP
       return null
   }
 
-  return <h1>{state.value}</h1>
+  return <h1>{state.value as string}</h1>
 }

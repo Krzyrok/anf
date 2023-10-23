@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Main } from 'Main';
 import { AppProviders } from 'AppProviders';
@@ -23,7 +23,7 @@ describe('App Component', () => {
     </MemoryRouter>)
 
     const btn = await findByRole("link", { name:  "Historia konta" })
-    btn.click()
+    act(() => btn.click())
 
     await findByText("Unbranded Cotton Mouse")
   });

@@ -1,7 +1,9 @@
 module.exports = {
   "ignorePatterns": [
     "*.spec.tsx", "*.spec.ts", "**/stories/**", // nie lintujemy testów ani stories - nie warto
+    ".eslintrc.js", "config-overrides.js", // nie lintujemy również konfiguracji
     "**/lessons/m1/**", // nie lintujemy modułu Type-Safety, bo nie chcemy mieszać błędów kompilatora i lintera
+    "**/lessons/m3/homework/contacts", // moduł jest izolowany ze względu na starszą wersję reacta
     "**/setup/**", // nie lintujemy zewnętrznych setupów (jasmine, mocha, puppeteer, cypress etc.)
   ],
   "extends": [

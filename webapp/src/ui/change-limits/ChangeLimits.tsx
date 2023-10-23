@@ -13,7 +13,7 @@ export const StatusWrapper = styled.div`
   padding: 0;
 `;
 
-export const ChangeLimits: React.FC = () => {
+export const ChangeLimits = () => {
   const [status, setStatus] = useState<"CLEAN" | "RUNNING" | "SUCCESS" | "FAIL">("CLEAN")
   const start = () => { setStatus("RUNNING") }
 

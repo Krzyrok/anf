@@ -92,7 +92,7 @@ export class AuthorizeDeviceStore implements AuthorizeDeviceProcess {
 
   submitDeviceName = async (currentDeviceName: string) => {
     this.assertState(this._state, "ADD_DEVICE_FORM")
-    
+
     this.setState({ type: "LOADING" })
     const tokenInstruction = await getTokenInstruction()
     this.setState({

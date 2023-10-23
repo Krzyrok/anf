@@ -175,7 +175,7 @@ interface ChangeLimitsProcessMachineProps {
   onCancel: () => void
 }
 
-export const ChangeLimitsWithErrorHandling: React.FC<ChangeLimitsProcessMachineProps> = (props) => {
+export const ChangeLimitsWithErrorHandling = (props: ChangeLimitsProcessMachineProps) => {
   const { onSuccess, onCancel } = props
 
   const {

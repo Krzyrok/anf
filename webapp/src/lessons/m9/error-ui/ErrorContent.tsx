@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `;
 Wrapper.displayName = "Wrapper";
 
-export const ErrorContent: React.FC<ErrorContentProps> = (props) => {
+export const ErrorContent = (props: ErrorContentProps) => {
   const { message, noImage = false } = props
   return <Wrapper>
     {!noImage && <img src="/hanging-monkey.png" alt="error occurred" width="120px" />}

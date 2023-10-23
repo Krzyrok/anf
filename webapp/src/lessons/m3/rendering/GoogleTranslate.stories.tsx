@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 
 import { GoogleTranslate } from './GoogleTranslate';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m3.add('Rendering').toString(),
+  title: 'Lessons/M3 React/Rendering',
   argTypes: {
   },
 } as Meta;

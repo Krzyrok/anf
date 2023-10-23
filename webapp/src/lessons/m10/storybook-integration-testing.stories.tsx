@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { AuthorizeDeviceProcessUnion } from 'lessons/m6/authorize-device/hooks/AuthorizeDeviceProcessUnion'
@@ -8,9 +8,9 @@ import { AuthorizeDeviceProcessUnion } from 'lessons/m6/authorize-device/hooks/A
 import { Panel } from 'ui/layout';
 import { Button } from 'ui/atoms';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m10.add('Storybook Integration Testing').toString(),
+  title: 'Lessons/M10 End-to-end Testing/Storybook Integration Testing',
 } as Meta;
 
 const notify = action('notify')

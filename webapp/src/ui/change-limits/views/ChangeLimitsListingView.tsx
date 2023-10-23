@@ -12,7 +12,7 @@ interface ChangeLimitsListingViewProps {
   onChangeVerificationMethod: () => void
 }
 
-export const ChangeLimitsListingView: React.FC<ChangeLimitsListingViewProps> = (props) => {
+export const ChangeLimitsListingView = (props: ChangeLimitsListingViewProps) => {
   const {
     settings: {
       dailyLimit, availableDailyAmount,

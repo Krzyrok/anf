@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { useState } from 'react';
+import { Meta } from '@storybook/react';
 
 import { Button } from 'ui/atoms';
 import { Description, TextField } from 'ui/molecules';
@@ -39,3 +39,7 @@ export const ReactKeysIndex = () => {
     <Button variant="SECONDARY" onClick={addItem}>add</Button>
   </>
 }
+
+export default {
+  title: 'Lessons/M3 React/Rendering',
+} as Meta;

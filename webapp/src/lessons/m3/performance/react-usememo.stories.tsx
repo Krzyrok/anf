@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { memo, useMemo, useCallback } from 'react';
+import { Meta } from '@storybook/react';
 import { renderAction } from 'stories';
 import { Button } from 'ui/atoms';
 
@@ -10,8 +10,8 @@ interface MemoizedComponentProps {
   data: { value: number }
   onClick(): void
 }
-const MemoizedComponent: React.FC<MemoizedComponentProps> = memo(
-  (props) => {
+const MemoizedComponent = memo(
+  (props: MemoizedComponentProps) => {
     renderAction(`render MemoizedComponent`)
     return <div>
       This is my data value: <code>{props.data.value}</code>
@@ -44,3 +44,7 @@ export const ReactUseMemoUseCallback = () => {
     {/* <MemoizedComponent data={data} onClick={onClick} /> */}
   </>
 }
+
+export default {
+  title: 'Lessons/M3 React/Performance',
+} as Meta;

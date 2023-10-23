@@ -8,7 +8,7 @@ interface TransfersListingProps {
   transfers: Transfer[]
 }
 
-export const TransfersListing: React.FC<TransfersListingProps> = (props) => {
+export const TransfersListing = (props: TransfersListingProps) => {
   const { transfers } = props
   return <Table
     items={transfers}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { AuthorizeDeviceWithErrorHandling } from './AuthorizeDeviceWithErrorHandling'
@@ -11,9 +11,9 @@ import { ChangeLimitsWithErrorHandling } from './HOMEWORK-ChangeLimitsWithErrorH
 import { Panel } from 'ui/layout';
 import { Button } from 'ui/atoms';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m9.add('Process Error Handling').toString(),
+  title: 'Lessons/M9 Error handling/Process Error Handling',
   // parameters: {
   //   msw: [...tokenMockHandlers, ...limitsMockHandlers]
   // },

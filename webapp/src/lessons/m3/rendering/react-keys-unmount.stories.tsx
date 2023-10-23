@@ -1,11 +1,11 @@
 import React from 'react';
+import { Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { useStepper } from 'stories';
 
 import { Button } from 'ui/atoms';
 import { Description } from 'ui/molecules';
 import { Section } from 'ui/layout';
-
 import { TextTask } from 'api/exams'
 import { TextTaskView } from 'ui/tasks/TextTaskView'
 
@@ -55,3 +55,7 @@ export const ReactKeysUnmount = () => {
     </Section>
   </>
 }
+
+export default {
+  title: 'Lessons/M3 React/Rendering',
+} as Meta;

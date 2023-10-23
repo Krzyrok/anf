@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import classes from "./DepartmentList.module.css";
 
@@ -16,7 +16,7 @@ export interface Department {
 }
 
 const DepartmentList = (props: { settings?: Settings, isWebComponent?: boolean }) => {
-  const { isLoading, error, data } = useQuery('departments', (): Promise<Department[]> => {
+  const { isLoading, error, data } = useQuery(['departments'], (): Promise<Department[]> => {
     return fetch('http://localhost:3000/departments').then(res => res.json());
   });
 

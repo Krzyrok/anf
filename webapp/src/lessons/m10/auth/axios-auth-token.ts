@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig } from  'axios'
+import axios, { InternalAxiosRequestConfig } from 'axios'
 
 export const setAuthorizationHeader = (token: string) => {
-  const includeToken = (config: AxiosRequestConfig) => {
+  const includeToken = (config: InternalAxiosRequestConfig) => {
     if (token) {
-      config.headers!.Authorization = token;
+      config.headers.Authorization = token;
     }
     return config;
   }

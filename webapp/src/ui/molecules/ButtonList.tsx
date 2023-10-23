@@ -18,7 +18,7 @@ const ButtonListWrapper = styled.div<ButtonListProps>`
   }
 `;
 
-export const ButtonList: React.FC<ButtonListProps> = (props) => {
+export const ButtonList = (props: React.PropsWithChildren<ButtonListProps>) => {
   const { align, children, className } = props as any;
   return <ButtonListWrapper align={align} className={className}>
     {children}

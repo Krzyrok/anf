@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { useRef, useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 
 import { Button } from 'ui/atoms';
 import { Description } from 'ui/molecules';
@@ -12,14 +12,14 @@ import { getStore, changeProperty, SampleState } from './redux-sample'
 import { renderAction } from 'stories';
 import { Section } from 'ui/layout';
 
-import { lessons } from 'stories';
+
 export default {
-  title: lessons.m5.add('Redux').toString(),
+  title: 'Lessons/M5 Redux/Redux',
   argTypes: {
   },
 } as Meta;
 
-const Consumer: React.FC<{ prop: string, value: string }> = ({ prop, value }) => {
+const Consumer = ({ prop, value }: { prop: string, value: string }) => {
   renderAction(`ConnectConsumer${prop}`)
   return <>value A is: { value }</>
 }

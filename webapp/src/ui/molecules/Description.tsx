@@ -11,10 +11,10 @@ const DescriptionWrapper = styled(Section)`
 
 interface DescriptionProps {
   header: React.ReactNode
-  children: (C: ComponentType) => React.ReactNode
+  children: (C: ComponentType<React.PropsWithChildren>) => React.ReactNode
 }
 
-export const Description: React.FC<DescriptionProps> = (props) => {
+export const Description = (props: DescriptionProps) => {
   const { header, children } = props
 
 

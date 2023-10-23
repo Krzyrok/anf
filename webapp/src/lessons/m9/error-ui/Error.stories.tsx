@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+
+import { Meta } from '@storybook/react';
 
 import { Button } from 'ui/atoms';
 import { useModalToggle } from 'ui/molecules';
@@ -11,9 +11,9 @@ import { ErrorModal } from './ErrorModal';
 import { ErrorBoundary } from './ErrorBoundary';
 import { KaboomSync } from './Kaboom';
 
-import { lessons, useRandom } from 'stories';
+import { useRandom } from 'stories';
 export default {
-  title: lessons.m9.add('Error UI').toString(),
+  title: 'Lessons/M9 Error handling/Error UI',
   component: ErrorPage,
   argTypes: {
   },

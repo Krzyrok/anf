@@ -19,5 +19,11 @@ declare namespace Cypress {
      * @see https://github.com/jaredpalmer/cypress-image-snapshot/issues/18
      */
     waitForFontsToLoad(): void;
+
+    /**
+     * Utility to set device pixel density, used for snapshot testing.
+     * @see https://github.com/jaredpalmer/cypress-image-snapshot/issues/129
+     */
+    setDevicePixelRatio(ratio: number): void;
   }
 }

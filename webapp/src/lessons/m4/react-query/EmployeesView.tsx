@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Loader, FormatMoney, Typography, Button } from 'ui/atoms';
 import { CheckboxField } from 'ui/molecules';
@@ -44,7 +44,7 @@ const calculateTotalSalary = (employees: Employee[]) => {
 interface EmployeesViewProps {
 }
 
-export const EmployeesView: React.FC<EmployeesViewProps> = () => {
+export const EmployeesView = (props: EmployeesViewProps) => {
   const [page, setPage] = useState(1)
   /**
    * 🔥 UWAGA!
@@ -123,7 +123,7 @@ export const EmployeesView: React.FC<EmployeesViewProps> = () => {
 
       {isSuccess
         ? <EmployeeList
-          employees={data!}
+          employees={data}
           onGiveRiseClick={employee => salaryMutation.mutate({ id: employee.id, salary: employee.salary + 100 })}
           onFireClick={employee => fireMutation.mutate(employee.id)}
         /> : <Loader />

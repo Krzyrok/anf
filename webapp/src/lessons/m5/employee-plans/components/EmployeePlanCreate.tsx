@@ -26,9 +26,9 @@ const FieldsWrapper = styled.div`
   }
 `;
 
-export const EmployeePlanCreate: React.FC<EmployeePlanSelectProps> = ({
+export const EmployeePlanCreate = ({
   onCreatePlanClicked
-}) => {
+}: EmployeePlanSelectProps) => {
   const planNameRef = useRef<HTMLInputElement>(null) // 😎 bez nulla wyskakuje błąd kompilacji (jeśli nic nie podamy, to TS wskakuje w overload z undefinedem - tak są zdefiniowane typingi w reakcie; jak podamy nulla explicite, to wskoczy w inny overload i nie uzupełni o undefined)
 
   const onCreatePlan = useCallback((e: SyntheticEvent) => {

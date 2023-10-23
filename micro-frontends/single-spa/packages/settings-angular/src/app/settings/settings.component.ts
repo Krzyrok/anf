@@ -1,4 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { PanelComponent } from '../panel/panel.component';
 
 export interface Settings {
   displayCosts?: boolean;
@@ -9,7 +13,13 @@ export interface Settings {
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  styleUrls: ['./settings.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    PanelComponent,
+  ],
 })
 export class SettingsComponent {
   @Input()

@@ -140,9 +140,9 @@ const EmployeeButtons = styled(ButtonList)`
   }
 `;
 
-export const EmployeeList: React.FC<EmployeeListProps> = ({
+export const EmployeeList = ({
   employees, plan, onGiveRiseClick, onFireClick, onResetClick
-}) => {
+}: EmployeeListProps) => {
 
   return <>
     <Typography variant="h2">Pracownicy</Typography>

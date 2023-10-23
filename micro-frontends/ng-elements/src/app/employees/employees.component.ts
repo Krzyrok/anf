@@ -1,5 +1,8 @@
 import { ChangeDetectorRef, Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
+import { PanelComponent } from '../components/panel/panel.component';
 
 export interface Settings {
   displayCosts?: boolean;
@@ -17,7 +20,13 @@ export interface Employee {
 
 @Component({
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
+  styleUrls: ['./employees.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    PanelComponent,
+  ],
 })
 export class EmployeesComponent implements OnInit {
   @Input()

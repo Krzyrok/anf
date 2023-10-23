@@ -27,7 +27,9 @@ async function lighthouseFromPuppeteer(url, options, config = null) {
   options.output = 'html';
 
   // Connect chrome-launcher to puppeteer
-  const resp = await util.promisify(request)(`http://localhost:${options.port}/json/version`);
+  // Node.js v17+ will resolve localhost to ipv6 ::1 instead of 127.0.0.1
+  // https://github.com/nodejs/node/issues/40537
+  const resp = await util.promisify(request)(`http://127.0.0.1:${options.port}/json/version`);
   const { webSocketDebuggerUrl } = JSON.parse(resp.body);
   const browser = await puppeteer.connect({
     browserWSEndpoint: webSocketDebuggerUrl,

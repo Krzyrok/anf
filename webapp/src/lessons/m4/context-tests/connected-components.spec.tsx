@@ -11,14 +11,14 @@ interface VideoCallParticipantsProps {
 /**
  * 🔥 rozbijamy komponent na 2 osobne: prezentacyjny + connected
  */
-export const VideoCallParticipants: React.FC<VideoCallParticipantsProps> = memo((props) => {
+export const VideoCallParticipants = memo((props: VideoCallParticipantsProps) => {
   const { participants } = props
   return participants ? <ul>
     {participants.map(p => <li key={p.id}>{p.name}</li>)}
   </ul> : null
 })
 
-export const VideoCallParticipantsConnected: React.FC = (props) => {
+export const VideoCallParticipantsConnected = () => {
   const participants = useParticipants()
   return participants
     ? <VideoCallParticipants participants={participants} />
@@ -42,12 +42,12 @@ const participantsData: Participant[] = [{
 describe('VideoCallParticipants (connected-components)', () => {
   /**
    * 🔥 UWAGA!
-   * 
+   *
    * w tym teście kontekst NIE bierze udziału
    * cel: chcielibyśmy przetestować funkcjonalności komponentu
    * a że ten komponent swoje dane ciągnie z kontekstu, to decydujemy się na rozbicie go:
    * rodzic/connected subskrybuje na kontekst, a dziecko/presentational jest pure
-   * 
+   *
    * Dzięki temu testujemy komponent "bez balastu"
    * Ale gdybyśmy chcieli przetestować komponent RAZEM Z kontekstem, to lepiej wybrać inne podejście
    */

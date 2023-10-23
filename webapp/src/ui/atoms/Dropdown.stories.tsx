@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
+
+import { StoryFn, Meta } from '@storybook/react';
 
 import { Dropdown } from './Dropdown';
 
@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ComponentProps<typeof Dropdown>> = (args) => <Dropdown {...args} />;
+const Template: StoryFn<ComponentProps<typeof Dropdown>> = (args) => <Dropdown {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

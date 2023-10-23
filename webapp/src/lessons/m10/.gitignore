@@ -3,6 +3,7 @@ backstop_data/bitmaps_test/
 
 cypress/screenshots/
 cypress/snapshots/**/__diff_output__
+cypress/snapshots/*.png
 cypress/videos/
 
 puppeteer/screenshots

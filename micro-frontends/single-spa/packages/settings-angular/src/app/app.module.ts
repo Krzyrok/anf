@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { SettingsModule } from './settings/settings.module';
+import { SettingsComponent } from './settings/settings.component';
 
 declare const WEBPACK_APP_BASE_HREF: string;
 
@@ -14,7 +14,7 @@ declare const WEBPACK_APP_BASE_HREF: string;
   ],
   imports: [
     BrowserModule,
-    SettingsModule,
+    SettingsComponent,
     RouterModule.forRoot([]),
   ],
   providers: [

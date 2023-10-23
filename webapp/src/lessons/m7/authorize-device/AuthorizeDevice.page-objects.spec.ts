@@ -8,11 +8,11 @@ import { AuthorizeDeviceProcessXState } from "lessons/m6/authorize-device/xstate
 
 /**
  * 🔥 UWAGA!
- * 
+ *
  * Poniższy zakomentowany kod ustawiałby mocki na poziomie jest.mock (jeśli ktoś tak woli)
  * my zaś w teście bazujemy na setupie `msw`
  * Pozostawiam oba - aby móc łatwo porównać.
- * 
+ *
  * Jakby co, zostawiam linijkę z importem, ponieważ:
  * 1) TypeScript ogarnia importy - i jeśli ścieżka jest niepoprawna, to huknie.
  * 2) Ale jest.mock - z perspektywy TypeScripta - przyjmuje tylko stringa. Nie "waliduje" go.
@@ -29,7 +29,7 @@ import { AuthorizeDeviceProcessXState } from "lessons/m6/authorize-device/xstate
  * Można
  * Ale zrobienie _wyjątku od reguły_ (żeby mocki NIE miały logiki) jest dużo lżejsze, bo to 1 IF.
  * I w testach sterujemy już tylko długością tokena.
- * 
+ *
  * TL;DR; radykalne stosowanie się do reguł nie zawsze jest korzystne
  * Przy tak niewielkiej liczbie logiki - test nadal jest czytelny, a setup znacznie lżejszy.
  * Ale gdyby miało przybyć dodatkowej logiki w mockach - to bez przesady - prawdopodobnie poszlibyśmy w kierunku fn.mockImplementation/mockImplementationOnce
@@ -49,11 +49,11 @@ import { AuthorizeDeviceProcessXState } from "lessons/m6/authorize-device/xstate
 
 /**
  * 🔥 NAJPIERW PLAN, DESIGN-FRIST. Implementacja - potem.
- * 
+ *
  * Warto najpierw spisać scenariusze, ZANIM zaczniemy pisać testy.
- * Oddzielamy fazę designu od machania łopatą :)  
+ * Oddzielamy fazę designu od machania łopatą :)
  * Jeśli koncentrujemy się na designie, redukujemy ryzyko, że o czymś zapomnimy, kiedy już nas pochłoną szczegóły techniczne testu
- * 
+ *
  * Dodatkowo, plan testów możemy dać komuś do review. Wówczas reviewowany jest pomysł.
  * Koszty zmian - o ile zdecydujemy się cokolwiek zmienić - będą ZNACZNIE MNIEJSZE, niż gdybyśmy testy mieli już napisane.
  */
@@ -64,7 +64,7 @@ describe('Authorize Device Process', () => {
     it.todo('should succeed after the user passes the correct password')
     it.todo('should block if the user passes an invalid password')
   })
-  
+
   describe('Add Device', () => {
     it.todo('should cancel the authorization choice if the user clicks cancel')
     it.todo('should succeed after the user passes the correct password')
@@ -210,32 +210,32 @@ describe('AuthorizeDevice (Page Object)', () => {
     it('should authorize a device successfully after the user passes the correct password', async () => {
       // given
       const authorizeDevicePO = AuthorizeDevicePO.render(Component)
-  
+
       // when
       authorizeDevicePO.clickChooseAddDeviceButton()
-  
+
       // then
       await authorizeDevicePO.expectTextDisplayed("Zapisz to urządzenie jako zaufane")
-  
+
       // when
       authorizeDevicePO.confirmAddDeviceName("mój komputerek")
-  
+
       // then
       await authorizeDevicePO.expectTextDisplayed("mój komputerek")
       await authorizeDevicePO.expectTextDisplayed("Zapisz to urządzenie jako zaufane")
-  
+
       // when
       // 🔥 bind composite page object
       const tokenViewPO = authorizeDevicePO.getAddDeviceTokenViewPO()
       // 🔥 operate on a smaller PO
       tokenViewPO.submitAddDeviceToken("pass")
-  
+
       // then
       await authorizeDevicePO.expectTextDisplayed("Urządzenie zapisane jako zaufane")
-  
+
       // when
       authorizeDevicePO.clickCloseButton()
-  
+
       // then
       authorizeDevicePO.expectSuccessCallback.toHaveBeenCalledTimes(1)
       authorizeDevicePO.expectLogoutCallback.not.toHaveBeenCalled()
