@@ -11,11 +11,13 @@ import { QuestionSummary } from "./QuestionSummary";
 //
 // - if we predict a lot of answers, then data processing can be done on BE.
 //    With every new answer:
-//      - new read model can be be prepared (some event based architecture),
+//      - new read model can be be prepared (some event based architecture)
+//        - more time consuming development phase + eventual consistency
+//        - but more performant during read request;
 //      - or read model can be recalculated "on-the-fly" - whenever query request will be done,
 //        then BE will prepare new data based on the actual DB
 //    In such case, there will be no common type on FE between SurveyAnswersSummaryTab and IndividualSurveysTab
-//    This was implemented below
+//    This was implemented below (derived type but it can be split completely at any moment)
 
 type SurveyAnswersSummaryTabProps = Pick<
   SurveySummaryReport,
