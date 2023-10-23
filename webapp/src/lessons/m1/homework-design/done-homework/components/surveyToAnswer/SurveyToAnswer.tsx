@@ -2,6 +2,7 @@ import * as React from "react";
 import { SurveyToEdit as SurveyToEditDto } from "../../domain/surveyToAnswer";
 import { NewSurvey as NewSurveyDto } from "../../domain/newSurveyToAnswer";
 import { Question } from "./Question";
+import { SurveyTopic } from "../topic/Topic";
 
 interface SurveyToAnswerProps {
   surveyId: string;
@@ -22,7 +23,7 @@ const SurveyToAnswerContent: React.FC<SurveyToAnswerContentProps> = (
   survey
 ) => (
   <>
-    {survey.topic}
+    <SurveyTopic topic={survey.topic} />
     {survey.questions.map((question) => (
       <Question {...question} />
     ))}
