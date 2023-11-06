@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SurveyToEdit as SurveyToEditDto } from "../../domain/surveyToAnswer";
 import { NewSurvey as NewSurveyDto } from "../../domain/newSurveyToAnswer";
-import { Question } from "./Question";
+import { Question } from "./question/Question";
 import { SurveyTopic } from "../topic/Topic";
 
 interface SurveyToAnswerProps {
