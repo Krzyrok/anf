@@ -19,7 +19,10 @@ interface QuestionAnswersSummaryBaseReport {
 
 export interface SingleAnswerQuestionAnswerSummaryReport {
   text: string;
-  selections: number;
+  selectedCount: number;
+  // `percentage` can be calculated on BE. Whether FE or BE - it depends if there is a lot of answers (but such
+  // calculation should not be resource consuming for FE)
+  // percentage: number;
 }
 
 export interface SurveySingleAnswerQuestionAnswersSummaryReport
@@ -28,7 +31,7 @@ export interface SurveySingleAnswerQuestionAnswersSummaryReport
   answersSummary: SingleAnswerQuestionAnswerSummaryReport[];
 }
 
-type MultipleAnswerQuestionAnswerSummaryReport =
+export type MultipleAnswerQuestionAnswerSummaryReport =
   SingleAnswerQuestionAnswerSummaryReport;
 
 export interface SurveyMultipleAnswerQuestionAnswersSummaryReport
@@ -37,7 +40,7 @@ export interface SurveyMultipleAnswerQuestionAnswersSummaryReport
   answersSummary: MultipleAnswerQuestionAnswerSummaryReport[];
 }
 
-interface OpenEndedQuestionAnswerSummaryReport {
+export interface OpenEndedQuestionAnswerSummaryReport {
   text: string;
   submitDate: Date;
 }
