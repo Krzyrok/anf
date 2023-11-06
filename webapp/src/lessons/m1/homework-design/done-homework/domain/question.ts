@@ -53,9 +53,13 @@ export interface AnsweredSurveyMultipleAnswerQuestion extends BaseQuestion {
   selectedAnswerIds: string[];
 }
 
+interface OpenEndedAnswer {
+  text: string;
+}
+
 export interface AnsweredSurveyOpenEndedQuestion extends BaseQuestion {
   type: SurveyQuestionType.openEnded;
-  answer: Answer; // or string or OpenEndedAnswer;
+  answer: OpenEndedAnswer;
 }
 
 // new survey
