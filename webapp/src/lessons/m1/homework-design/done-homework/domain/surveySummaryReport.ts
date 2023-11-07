@@ -1,9 +1,10 @@
+import { Id } from "./infrastructure/id";
 import { SurveyQuestionType } from "./question";
 
 export interface SurveySummaryReport {
   topic: string;
   questionsAnswersSummaries: QuestionAnswersSummaryReport[];
-  answeredSurveysIds: string[];
+  answeredSurveysIds: Id[];
   allRespondentsCount: number;
 }
 

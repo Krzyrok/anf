@@ -1,8 +1,9 @@
 import * as React from "react";
 import { IndividualSurvey } from "./IndividualSurvey";
+import { Id } from "../../../domain/infrastructure/id";
 
 interface IndividualSurveysTabProps {
-  answeredSurveyIds: string[];
+  answeredSurveyIds: Id[];
 }
 
 export const IndividualSurveysTab: React.FC<IndividualSurveysTabProps> = (
@@ -25,7 +26,7 @@ export const IndividualSurveysTab: React.FC<IndividualSurveysTabProps> = (
 };
 
 interface SurveySwitchButtonsProps {
-  onSurveyNumberChange: (newNumber: number) => void;
+  onSurveyNumberChange: (newNumber: number) => void; // onNext / onPrevious
   currentSurveyNumber: number;
   allSurveysCount: number;
 }

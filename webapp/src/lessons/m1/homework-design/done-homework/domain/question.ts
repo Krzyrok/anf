@@ -3,6 +3,8 @@
 // answered survey. Here I wanted to simplify things so some layer (domain/loader) would load BE model and
 // would map it to FE model.
 
+import { Id } from "./infrastructure/id";
+
 // Example of BE model
 
 // SurveyDefinition (here NewSurvey)
@@ -26,11 +28,11 @@ export type AnsweredSurveyQuestion =
 
 interface Answer {
   text: string;
-  id: string;
+  id: Id;
 }
 
 export interface BaseQuestion {
-  id: string;
+  id: Id;
   question: string;
   type: SurveyQuestionType;
 }
@@ -44,13 +46,13 @@ export enum SurveyQuestionType {
 export interface AnsweredSurveySingleAnswerQuestion extends BaseQuestion {
   type: SurveyQuestionType.singleAnswer;
   possibleAnswers: Answer[]; // or SingleAnswer[]
-  selectedAnswerId: string;
+  selectedAnswerId: Id;
 }
 
 export interface AnsweredSurveyMultipleAnswerQuestion extends BaseQuestion {
   type: SurveyQuestionType.multipleAnswer;
   possibleAnswers: Answer[]; // or MultipleAnswer
-  selectedAnswerIds: string[];
+  selectedAnswerIds: Id[];
 }
 
 interface OpenEndedAnswer {

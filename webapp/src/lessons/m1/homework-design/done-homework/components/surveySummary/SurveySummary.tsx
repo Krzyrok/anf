@@ -3,9 +3,10 @@ import { SurveySummaryReport } from "../../domain/surveySummaryReport";
 import { IndividualSurveysTab } from "./individualSurveys/IndividualSurveysTab";
 import { SurveyAnswersSummaryTab } from "./surveyAnswersSummary/SurveyAnswersSummaryTab";
 import { SurveyTopic } from "../topic/Topic";
+import { Id } from "../../domain/infrastructure/id";
 
 interface SurveySummaryProps {
-  surveyId: string;
+  surveyId: Id;
 }
 
 export const SurveySummary: React.FC<SurveySummaryProps> = (props) => {
@@ -20,6 +21,4 @@ export const SurveySummary: React.FC<SurveySummaryProps> = (props) => {
   );
 };
 
-declare const loadSurveySummaryReport: (
-  surveyId: string
-) => SurveySummaryReport;
+declare const loadSurveySummaryReport: (surveyId: Id) => SurveySummaryReport;
