@@ -7,7 +7,8 @@ declare const baseString: Base<string> // najwęższy typ
 
 // i funkcję, która oczekuje typu "środkowego"
 function doSomething(base: Base<string | number>){
-  base.add(1, "yo")
+  base.add(1, "yo");
+  const returned = base.get();
 }
 
 
@@ -19,9 +20,9 @@ interface Base<T> {
 }
 
 // i wywołania:
-doSomething(baseProperty) // nadtyp, contravariant - fails
+doSomething(baseProperty) // nadtyp, contravariant - fails // K: rather covariant fails
 doSomething(baseStringNumber) // typ, invariant - always passes
-doSomething(baseString) // podtyp, covariant - fails
+doSomething(baseString) // podtyp, covariant - fails .. K: rather contravariant fails
 
 
 // co się dzieje?
