@@ -37,8 +37,8 @@ zawierające 1 samplowy test. Code coverage pokrywa metodę `add`, zaś `sub` po
 
 ## Pliki wg lekcji
 
-- Cele testowania i systematyka
-- Kryteria wartościowych testów
+- [x] Cele testowania i systematyka
+- [x] Kryteria wartościowych testów
   - `false-pass.spec.tsx`
 - Asercje
   - `jest-rtl-assertions.spec.tsx`
