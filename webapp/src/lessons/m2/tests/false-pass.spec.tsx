@@ -2,6 +2,7 @@ import { fireEvent, render } from "@testing-library/react"
 
 export const StyledInput = () => <input type="checkbox" />
 
+// FALSE PASS
 test('input should be unchecked by default (FALSE PASS)', () => {
   const { container } = render(<StyledInput />)
   // expect((container.querySelector('input') as HTMLInputElement).checked).toBe(undefined)
@@ -14,11 +15,14 @@ test('input should be unchecked by default (FALSE PASS)', () => {
 
 const AndrzejuDzialaj = () => { throw new Error("Andrzej to walnie!") }
 
+// TEST fails and interrupts runner
 test.skip('Andrzej daje rade (FALSE PASS)', () => {
   Promise.resolve()
     .then(AndrzejuDzialaj)
 })
 
+
+// FAILs "normally"
 test.skip('Andrzej daje rade', async () => {
   await Promise.resolve()
     .then(AndrzejuDzialaj)
@@ -47,6 +51,7 @@ const ShipButton: React.FC<{ shipment: Shipment }> = (props) => {
 }
 
 // test był pisany dawno temu 🙃
+// fails because of reference on real js Date
 test.skip('should display active button (FALSE FAIL)', () => {
   const { getByTestId } = render(<ShipButton shipment={mockShipment} />)
   const btn = getByTestId('proceed-btn')
