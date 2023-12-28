@@ -20,7 +20,7 @@
 ## Agenda
 
 - [x] Moduł 1: Type-Safety
-- Moduł 2: Testowanie
+- [ ] Moduł 2: Testowanie
 - Moduł 3: React
 - Moduł 4: Zarządzanie Stanem: Hooks & Contexts
 - Moduł 5: Redux
